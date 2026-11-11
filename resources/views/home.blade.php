@@ -1,35 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- 1. HERO SECTION WITH ZIMMOAH LOGISTICS IDENTITY & MAERSK LAYOUT -->
-<div class="relative bg-slate-950 text-white min-h-[620px] flex items-center justify-center overflow-hidden">
+<!-- 1. HERO SECTION WITH ZIMMOAH LOGISTICS IDENTITY & MAERSK SPACIOUS LAYOUT -->
+<div class="relative bg-slate-950 text-white overflow-hidden">
     <!-- Scenic Logistics Background Image -->
     <div class="absolute inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80" 
              alt="Zimmoah Inland & Ocean Logistics" 
-             class="w-full h-full object-cover object-center opacity-35 brightness-75 scale-105 transition-transform duration-1000">
+             class="w-full h-full object-cover object-center opacity-30 brightness-75 scale-105 transition-transform duration-1000">
         <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0B131F]/95 via-[#0B131F]/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0B131F] via-[#0B131F]/85 to-transparent"></div>
     </div>
 
-    <!-- Hero Headline & Copy -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-20 w-full">
-        <div class="max-w-2xl space-y-6">
-            <span class="inline-flex items-center gap-2 bg-[#FECE00]/20 border border-[#FECE00]/40 text-[#FECE00] text-xs uppercase tracking-widest font-extrabold px-3.5 py-1 rounded-full">
-                <span class="w-2 h-2 rounded-full bg-[#FECE00]"></span>
+    <!-- Hero Content Container with Generous Breathing Space -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 pt-16 sm:pt-24 pb-32 sm:pb-44 w-full">
+        <div class="max-w-3xl space-y-6">
+            <span class="inline-flex items-center gap-2 bg-[#FECE00]/20 border border-[#FECE00]/50 text-[#FECE00] text-xs uppercase tracking-widest font-black px-3.5 py-1.5 rounded-full shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-[#FECE00] animate-pulse"></span>
                 End-to-End Supply Chain Solution
             </span>
+
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
                 Go the distance with <span class="text-[#FECE00]">seamless</span> freight transport.
             </h1>
-            <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+
+            <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
                 Kirim kargo Anda melalui armada laut, udara, atau darat - menghubungkan pelabuhan utama di Indonesia dengan jaringan logistik Asia-Pasifik secara efisien dan aman.
             </p>
-            <div class="flex flex-wrap items-center gap-4 pt-2">
-                <a href="#services" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-7 py-3.5 rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+
+            <!-- CTA Buttons with Clear Bottom Spacing -->
+            <div class="flex flex-wrap items-center gap-4 pt-4 mb-4">
+                <a href="#services" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-8 py-4 rounded-full shadow-xl transition transform hover:-translate-y-0.5">
                     Explore our services
                 </a>
-                <a href="{{ route('tickets.create') }}" class="border-2 border-white/80 hover:border-[#FECE00] text-white hover:text-[#FECE00] hover:bg-white/5 font-extrabold text-sm px-6 py-3.5 rounded-full transition">
+                <a href="{{ route('tickets.create') }}" class="border-2 border-white/80 hover:border-[#FECE00] text-white hover:text-[#FECE00] hover:bg-white/10 font-black text-sm px-7 py-3.5 rounded-full transition shadow-lg">
                     Buka Tiket Dukungan
                 </a>
             </div>
@@ -37,8 +41,8 @@
     </div>
 </div>
 
-<!-- 2. FLOATING QUICK-ACTION TOOL (MAERSK TABBED WIDGET WITH ZIMMOAH PALETTE) -->
-<div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-8 -mt-16 sm:-mt-20">
+<!-- 2. QUICK-ACTION TOOL (MAERSK TABBED WIDGET - CLEAN & NON-OVERLAPPING) -->
+<div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-8 -mt-20 sm:-mt-24 mb-14">
     <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden">
         <!-- Tab Headers -->
         <div class="flex border-b border-slate-200 bg-slate-50 text-xs sm:text-sm font-black text-slate-600">
@@ -60,18 +64,18 @@
         <div id="tracking-tab" class="tab-content p-6 sm:p-8">
             <form action="{{ route('tracking') }}" method="GET" class="flex flex-col sm:flex-row items-center gap-4">
                 <div class="relative flex-1 w-full">
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1">Nomor AWB / Resi / Tiket Bantuan</label>
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">Nomor AWB / Resi / Tiket Bantuan</label>
                     <input type="text" name="tracking_number" placeholder="Contoh: ZIM-2026-9042 atau V.2641-N" 
-                        class="w-full px-4 py-3.5 border border-slate-300 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00] focus:ring-2 focus:ring-[#FECE00]/30 transition">
+                        class="w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00] focus:ring-2 focus:ring-[#FECE00]/30 transition">
                 </div>
-                <div class="w-full sm:w-auto pt-0 sm:pt-5">
-                    <button type="submit" class="w-full sm:w-auto bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-8 py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                <div class="w-full sm:w-auto pt-0 sm:pt-6">
+                    <button type="submit" class="w-full sm:w-auto bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-8 py-3.5 rounded-2xl shadow-md transition flex items-center justify-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                         Lacak Sekarang
                     </button>
                 </div>
             </form>
-            <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
                 <span>Mendukung pelacakan kargo kontainer laut, kargo udara, dan tiket bantuan pelanggan.</span>
                 <a href="{{ route('tickets.lookup') }}" class="text-amber-700 font-extrabold hover:underline">Pelacakan Khusus Tiket &rarr;</a>
             </div>
@@ -81,17 +85,17 @@
         <div id="schedules-tab" class="tab-content p-6 sm:p-8 hidden">
             <form action="{{ route('schedules.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1">Pelabuhan / Kota Asal</label>
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">Pelabuhan / Kota Asal</label>
                     <input type="text" name="origin" placeholder="Contoh: Jakarta / Tanjung Priok" 
-                        class="w-full px-4 py-3.5 border border-slate-300 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00]">
+                        class="w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00]">
                 </div>
                 <div>
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1">Pelabuhan / Kota Tujuan</label>
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">Pelabuhan / Kota Tujuan</label>
                     <input type="text" name="destination" placeholder="Contoh: Busan / Incheon / Semarang" 
-                        class="w-full px-4 py-3.5 border border-slate-300 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00]">
+                        class="w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00]">
                 </div>
-                <div class="pt-0 sm:pt-5">
-                    <button type="submit" class="w-full bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-6 py-3.5 rounded-xl shadow-md transition">
+                <div class="pt-0 sm:pt-6">
+                    <button type="submit" class="w-full bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-6 py-3.5 rounded-2xl shadow-md transition">
                         Cari Rute & Jadwal
                     </button>
                 </div>
@@ -105,7 +109,7 @@
                     <h4 class="text-base font-black text-slate-900">Butuh Penawaran Tarif Pengiriman Kargo Korporat?</h4>
                     <p class="text-xs text-slate-600 mt-1">Tim sales dan operasional Zimmoah siap menghitungkan estimasi biaya terbaik untuk FCL, LCL, atau Air Freight.</p>
                 </div>
-                <a href="{{ route('tickets.create') }}" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-7 py-3 rounded-xl transition shadow-md whitespace-nowrap">
+                <a href="{{ route('tickets.create') }}" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-7 py-3.5 rounded-2xl transition shadow-md whitespace-nowrap">
                     Kirim Inquiry Penawaran &rarr;
                 </a>
             </div>
@@ -113,22 +117,22 @@
     </div>
 </div>
 
-<!-- 3. OPERATIONAL ADVISORY BANNER (ZIMMOAH ACCENT) -->
+<!-- 3. OPERATIONAL ADVISORY BANNER (SPACIOUS & SEPARATED) -->
 @if ($advisory)
-<div class="max-w-6xl mx-auto px-4 sm:px-8 mt-10">
-    <div class="bg-amber-50/90 border-2 border-[#FECE00]/70 rounded-2xl p-5 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div class="flex items-start space-x-3.5">
-            <div class="p-2.5 bg-[#FECE00] text-slate-950 rounded-xl flex-shrink-0 font-black shadow-sm">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+<div class="max-w-5xl mx-auto px-4 sm:px-8 mb-16">
+    <div class="bg-amber-50/90 border-2 border-[#FECE00]/70 rounded-3xl p-6 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+        <div class="flex items-start space-x-4">
+            <div class="p-3 bg-[#FECE00] text-slate-950 rounded-2xl flex-shrink-0 font-black shadow-sm">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
             </div>
             <div>
-                <span class="text-[11px] font-black uppercase tracking-wider text-slate-950 bg-[#FECE00] px-2.5 py-0.5 rounded">Operational Advisory</span>
-                <h4 class="text-sm font-black text-slate-900 mt-1">{{ $advisory->title }}</h4>
-                <p class="text-xs text-slate-600 mt-0.5">{{ $advisory->summary }}</p>
+                <span class="text-[11px] font-black uppercase tracking-wider text-slate-950 bg-[#FECE00] px-3 py-0.5 rounded-md">Operational Advisory</span>
+                <h4 class="text-base font-black text-slate-900 mt-1.5">{{ $advisory->title }}</h4>
+                <p class="text-xs text-slate-600 mt-1 leading-relaxed">{{ $advisory->summary }}</p>
             </div>
         </div>
-        <div class="flex items-center space-x-3 w-full md:w-auto justify-end">
-            <a href="{{ $advisory->action_url ?? route('schedules.index') }}" class="bg-slate-950 hover:bg-slate-800 text-[#FECE00] font-black text-xs px-5 py-2.5 rounded-full transition shadow-sm whitespace-nowrap">
+        <div class="flex items-center space-x-3 w-full md:w-auto justify-end flex-shrink-0">
+            <a href="{{ $advisory->action_url ?? route('schedules.index') }}" class="bg-slate-950 hover:bg-slate-800 text-[#FECE00] font-black text-xs px-6 py-3 rounded-full transition shadow-md whitespace-nowrap">
                 {{ $advisory->action_text }}
             </a>
         </div>
@@ -137,7 +141,7 @@
 @endif
 
 <!-- 4. SERVICES BENTO GRID (4 PILAR BISNIS ZIMMOAH) -->
-<section id="services" class="max-w-7xl mx-auto px-4 sm:px-8 py-20">
+<section id="services" class="max-w-7xl mx-auto px-4 sm:px-8 py-16">
     <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
         <span class="text-xs font-black uppercase tracking-widest text-amber-700 bg-amber-100 px-3 py-1 rounded-full">Pilar Layanan Logistik</span>
         <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Solusi Rantai Pasok Terpadu</h2>
@@ -269,7 +273,7 @@
     </div>
 </section>
 
-<!-- 6. OFFICE DIRECTORY (3 CABANG ZIMMOAH DENGAN WARNA ASLI) -->
+<!-- 6. OFFICE DIRECTORY (3 CABANG ZIMMOAH) -->
 <section class="max-w-7xl mx-auto px-4 sm:px-8 py-20">
     <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-amber-700 bg-amber-100 px-3 py-1 rounded-full">Jaringan Kantor Resmi</span>
