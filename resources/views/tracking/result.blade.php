@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-[#0B1522] text-white py-14 px-4 sm:px-8 border-b border-slate-800">
+<div class="bg-[#0B131F] text-white py-14 px-4 sm:px-8 border-b border-slate-800">
     <div class="max-w-4xl mx-auto space-y-2">
-        <span class="text-xs uppercase tracking-widest font-extrabold text-[#00A3E0] bg-[#00A3E0]/20 px-3 py-1 rounded-full">
+        <span class="text-xs uppercase tracking-widest font-black text-slate-950 bg-[#FECE00] px-3.5 py-1 rounded-full">
             Hasil Pelacakan Kargo
         </span>
-        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Status Pelacakan: <span class="text-[#00A3E0] font-mono">{{ $query }}</span></h1>
+        <h1 class="text-2xl sm:text-3xl font-black tracking-tight">Status Pelacakan: <span class="text-[#FECE00] font-mono">{{ $query }}</span></h1>
     </div>
 </div>
 
@@ -16,10 +16,10 @@
     <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6">
         <div class="flex items-center justify-between border-b border-slate-100 pb-4">
             <div>
-                <span class="text-xs uppercase tracking-wider font-extrabold text-[#00A3E0]">Voyage Terjadwal</span>
+                <span class="text-xs uppercase tracking-wider font-black text-amber-700">Voyage Terjadwal</span>
                 <h2 class="text-xl font-bold text-slate-900 mt-0.5">{{ $schedule->carrier_vessel_name }} ({{ $schedule->voyage_number }})</h2>
             </div>
-            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-100 text-emerald-800">
+            <span class="px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-300">
                 {{ $schedule->status }}
             </span>
         </div>
@@ -28,7 +28,7 @@
             <div>
                 <span class="text-slate-400 font-bold block mb-1">Rute:</span>
                 <strong class="text-slate-900 text-sm block">{{ $schedule->origin_port }}</strong>
-                <span class="text-[#00A3E0] font-bold">&darr; {{ $schedule->destination_port }}</span>
+                <span class="text-amber-600 font-bold">&darr; {{ $schedule->destination_port }}</span>
             </div>
             <div>
                 <span class="text-slate-400 font-bold block mb-1">Waktu Keberangkatan (ETD):</span>
@@ -51,7 +51,7 @@
                 <div class="p-3 bg-emerald-50 text-emerald-800 rounded-xl border border-emerald-200 font-bold">
                     2. Gate In Pelabuhan
                 </div>
-                <div class="p-3 bg-blue-50 text-blue-800 rounded-xl border border-blue-200 font-bold">
+                <div class="p-3 bg-amber-50 text-amber-900 rounded-xl border border-amber-300 font-bold">
                     3. In-Transit (Berlayar)
                 </div>
                 <div class="p-3 bg-slate-50 text-slate-400 rounded-xl border border-slate-200 font-medium">
@@ -71,7 +71,7 @@
             Nomor referensi <strong class="text-slate-800">{{ $query }}</strong> belum terdaftar pada sistem kargo aktif. Pastikan format nomor AWB, kontainer, atau kode tiket sudah sesuai.
         </p>
         <div class="pt-2 flex justify-center gap-3">
-            <a href="{{ route('home') }}" class="bg-[#00A3E0] hover:bg-[#008CC2] text-white font-bold text-xs px-6 py-2.5 rounded-full transition shadow-sm">
+            <a href="{{ route('home') }}" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-xs px-6 py-2.5 rounded-full transition shadow-sm">
                 Cari Kembali
             </a>
             <a href="{{ route('tickets.create') }}" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs px-6 py-2.5 rounded-full transition">

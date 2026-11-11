@@ -35,12 +35,12 @@
         @foreach ($ticket->replies as $reply)
         <div class="flex gap-4 {{ $reply->sender_type === 'AGENT' ? 'flex-row-reverse' : '' }}">
             <!-- Avatar -->
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0 {{ $reply->sender_type === 'AGENT' ? 'bg-[#00A3E0] text-white' : 'bg-slate-300 text-slate-800' }}">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-black text-xs flex-shrink-0 {{ $reply->sender_type === 'AGENT' ? 'bg-[#FECE00] text-slate-950 shadow-md' : 'bg-slate-300 text-slate-800' }}">
                 {{ $reply->sender_type === 'AGENT' ? 'ZIM' : substr($reply->sender_name, 0, 2) }}
             </div>
 
             <!-- Bubble Content -->
-            <div class="max-w-2xl w-full bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-3 {{ $reply->sender_type === 'AGENT' ? 'border-l-4 border-l-[#00A3E0]' : '' }}">
+            <div class="max-w-2xl w-full bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-3 {{ $reply->sender_type === 'AGENT' ? 'border-l-4 border-l-[#FECE00]' : '' }}">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-2 text-xs">
                     <div>
                         <strong class="text-slate-900">{{ $reply->sender_name }}</strong>
@@ -59,7 +59,7 @@
                     @foreach ($reply->attachments as $att)
                     <div class="flex items-center justify-between bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-xs">
                         <div class="flex items-center space-x-2">
-                            <svg class="w-4 h-4 text-[#00A3E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+                            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
                             <span class="font-medium text-slate-800">{{ $att->file_name }}</span>
                             <span class="text-slate-400 text-[10px]">({{ $att->formatted_size }})</span>
                         </div>
@@ -73,9 +73,9 @@
     </div>
 
     <!-- Client Reply Box -->
-    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-md">
-        <h3 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <svg class="w-5 h-5 text-[#00A3E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md">
+        <h3 class="text-base font-black text-slate-900 mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
             Kirimkan Balasan Tambahan
         </h3>
 
@@ -85,16 +85,16 @@
 
             <div>
                 <textarea name="message" rows="4" placeholder="Tuliskan pesan balasan Anda..." required
-                    class="w-full px-4 py-3 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0] leading-relaxed"></textarea>
+                    class="w-full px-4 py-3 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00] leading-relaxed"></textarea>
             </div>
 
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div class="w-full sm:w-auto">
                     <input type="file" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" 
-                        class="text-xs text-slate-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 cursor-pointer">
+                        class="text-xs text-slate-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-amber-100 file:text-amber-900 hover:file:bg-amber-200 cursor-pointer">
                 </div>
 
-                <button type="submit" class="bg-[#00A3E0] hover:bg-[#008CC2] text-white font-bold text-xs px-6 py-3 rounded-xl transition shadow-md whitespace-nowrap">
+                <button type="submit" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-xs px-7 py-3 rounded-xl transition shadow-md whitespace-nowrap">
                     Kirim Balasan &rarr;
                 </button>
             </div>

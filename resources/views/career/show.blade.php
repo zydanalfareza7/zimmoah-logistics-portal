@@ -18,7 +18,7 @@
                 @endif
             </div>
         </div>
-        <a href="#apply-section" class="bg-[#00A3E0] hover:bg-[#008CC2] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-lg transition">
+        <a href="#apply-section" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition">
             Lamar Posisi Ini &darr;
         </a>
     </div>
@@ -28,28 +28,28 @@
     <!-- Main Description -->
     <div class="lg:col-span-2 space-y-10">
         <!-- Overview -->
-        <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm space-y-6">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Ringkasan Pekerjaan</h2>
+        <div class="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm space-y-6">
+            <h2 class="text-xl font-black text-slate-900 border-b border-slate-100 pb-3">Ringkasan Pekerjaan</h2>
             <p class="text-sm text-slate-600 leading-relaxed">{{ $job->description }}</p>
 
             <div>
-                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Tanggung Jawab Utama</h3>
-                <div class="text-sm text-slate-600 leading-relaxed whitespace-pre-line bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider mb-2">Tanggung Jawab Utama</h3>
+                <div class="text-sm text-slate-600 leading-relaxed whitespace-pre-line bg-slate-50 p-4 rounded-2xl border border-slate-200/60">
                     {{ $job->responsibilities }}
                 </div>
             </div>
 
             <div>
-                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Kualifikasi & Persyaratan</h3>
-                <div class="text-sm text-slate-600 leading-relaxed whitespace-pre-line bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider mb-2">Kualifikasi & Persyaratan</h3>
+                <div class="text-sm text-slate-600 leading-relaxed whitespace-pre-line bg-slate-50 p-4 rounded-2xl border border-slate-200/60">
                     {{ $job->requirements }}
                 </div>
             </div>
 
             @if ($job->benefits)
             <div>
-                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Benefit & Fasilitas</h3>
-                <div class="text-sm text-slate-600 leading-relaxed whitespace-pre-line bg-emerald-50/50 p-4 rounded-xl border border-emerald-200/60">
+                <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider mb-2">Benefit & Fasilitas</h3>
+                <div class="text-sm text-slate-600 leading-relaxed whitespace-pre-line bg-amber-50/60 p-4 rounded-2xl border border-amber-200/60">
                     {{ $job->benefits }}
                 </div>
             </div>
@@ -57,10 +57,10 @@
         </div>
 
         <!-- Application Form Section -->
-        <div id="apply-section" class="bg-white rounded-2xl p-8 border-2 border-[#00A3E0]/40 shadow-xl space-y-6">
+        <div id="apply-section" class="bg-white rounded-3xl p-8 border-2 border-[#FECE00] shadow-xl space-y-6">
             <div class="border-b border-slate-200 pb-4">
-                <span class="text-xs uppercase tracking-widest font-extrabold text-[#00A3E0]">Formulir Pendaftaran</span>
-                <h2 class="text-2xl font-bold text-slate-900 mt-1">Kirimkan Lamaran Anda</h2>
+                <span class="text-xs uppercase tracking-widest font-black text-amber-900 bg-[#FECE00] px-3 py-0.5 rounded">Formulir Pendaftaran</span>
+                <h2 class="text-2xl font-black text-slate-900 mt-2">Kirimkan Lamaran Anda</h2>
                 <p class="text-xs text-slate-500 mt-1">Seluruh data pelamar dienkripsi dan diproses secara rahasia sesuai kepatuhan UU PDP.</p>
             </div>
 
@@ -71,13 +71,13 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nama Lengkap *</label>
                         <input type="text" name="full_name" value="{{ old('full_name') }}" required 
-                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">
+                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00]">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Alamat Email *</label>
                         <input type="email" name="email" value="{{ old('email') }}" required 
-                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">
+                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00]">
                     </div>
                 </div>
 
@@ -85,13 +85,13 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nomor WhatsApp / HP *</label>
                         <input type="text" name="phone" value="{{ old('phone') }}" placeholder="+62 8..." required 
-                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">
+                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00]">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Profil LinkedIn (Opsional)</label>
                         <input type="url" name="linkedin_url" value="{{ old('linkedin_url') }}" placeholder="https://linkedin.com/in/..." 
-                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">
+                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00]">
                     </div>
                 </div>
 
@@ -99,13 +99,13 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Ekspektasi Gaji Bulanan (IDR)</label>
                         <input type="number" name="expected_salary" value="{{ old('expected_salary') }}" placeholder="Contoh: 8500000" 
-                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">
+                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00]">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Notice Period (Mulai Bekerja)</label>
                         <input type="text" name="notice_period" value="{{ old('notice_period') }}" placeholder="Contoh: Segera / 1 Bulan" 
-                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">
+                            class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00]">
                     </div>
                 </div>
 
@@ -114,8 +114,8 @@
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                         Upload CV / Resume (PDF / DOCX, Maksimal 5MB) *
                     </label>
-                    <div class="border-2 border-dashed border-slate-300 rounded-xl p-6 text-center hover:border-[#00A3E0] transition bg-slate-50">
-                        <input type="file" name="resume" accept=".pdf,.doc,.docx" required class="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#00A3E0] file:text-white hover:file:bg-[#008CC2] cursor-pointer">
+                    <div class="border-2 border-dashed border-slate-300 rounded-2xl p-6 text-center hover:border-[#FECE00] transition bg-slate-50">
+                        <input type="file" name="resume" accept=".pdf,.doc,.docx" required class="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-[#FECE00] file:text-slate-950 hover:file:bg-[#E5B800] cursor-pointer">
                         <p class="text-[11px] text-slate-400 mt-2">Format yang didukung: PDF, DOCX. Disimpan di private encrypted storage.</p>
                     </div>
                 </div>
@@ -123,11 +123,11 @@
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Surat Pengantar / Catatan untuk HR (Opsional)</label>
                     <textarea name="cover_letter" rows="3" placeholder="Ceritakan singkat motivasi dan pengalaman relevan Anda..." 
-                        class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">{{ old('cover_letter') }}</textarea>
+                        class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#FECE00]">{{ old('cover_letter') }}</textarea>
                 </div>
 
                 <div class="pt-2">
-                    <button type="submit" class="w-full bg-[#00A3E0] hover:bg-[#008CC2] text-white font-bold text-sm py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                    <button type="submit" class="w-full bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         Kirim Lamaran Kerja Sekarang
                     </button>

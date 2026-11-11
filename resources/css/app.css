@@ -5,8 +5,10 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-    --color-brand-cyan: #00A3E0;
-    --color-brand-yellow: #F5A623;
-    --color-brand-dark: #0D1B2A;
+    --font-sans: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --color-brand-yellow: #FECE00;
+    --color-brand-yellow-dark: #E5B800;
+    --color-brand-yellow-light: #FFF3C4;
+    --color-brand-dark: #0B131F;
+    --color-brand-black: #111827;
 }

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+  <!-- Zimmoah Emblem -->
+  <rect x="0" y="0" width="48" height="48" rx="12" fill="#FECE00"/>
+  <path d="M12 14h24v4.5L19.5 30H36v5H12v-4.5L28.5 19H12v-5z" fill="#FFFFFF"/>
+  <!-- ZIMMOAH Text -->
+  <text x="62" y="32" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="24" font-weight="900" letter-spacing="1.5" fill="#111827">ZIMMOAH</text>
+  <text x="63" y="44" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="8" font-weight="700" letter-spacing="3" fill="#D97706">GLOBAL LOGISTICS</text>
+</svg>
