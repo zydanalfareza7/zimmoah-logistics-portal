@@ -93,22 +93,22 @@
                         <span>Services</span>
                         <svg class="w-3.5 h-3.5 transition group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div class="absolute left-0 mt-0 w-64 bg-[#0F1A2A] rounded-2xl shadow-2xl border border-slate-700/80 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <a href="{{ route('services.forwarding') }}" class="block px-4 py-2.5 text-xs text-slate-200 hover:bg-[#FECE00] hover:text-slate-950 transition rounded-lg mx-1">
-                            <span class="font-extrabold block">Freight Forwarding</span>
-                            <span class="text-slate-400 group-hover:text-slate-800 text-[11px]">Ocean & Air Cargo International</span>
+                    <div class="absolute left-0 mt-0 w-72 bg-slate-950 rounded-2xl shadow-2xl border border-slate-700 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="{{ route('services.forwarding') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
+                            <span class="font-extrabold block text-sm">Freight Forwarding</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">Ocean & Air Cargo International</span>
                         </a>
-                        <a href="{{ route('services.warehousing') }}" class="block px-4 py-2.5 text-xs text-slate-200 hover:bg-[#FECE00] hover:text-slate-950 transition rounded-lg mx-1">
-                            <span class="font-extrabold block">Warehousing</span>
-                            <span class="text-slate-400 group-hover:text-slate-800 text-[11px]">Gudang Transit & Customs Clearance</span>
+                        <a href="{{ route('services.warehousing') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
+                            <span class="font-extrabold block text-sm">Warehousing</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">Gudang Transit & Customs Clearance</span>
                         </a>
-                        <a href="{{ route('services.trucking') }}" class="block px-4 py-2.5 text-xs text-slate-200 hover:bg-[#FECE00] hover:text-slate-950 transition rounded-lg mx-1">
-                            <span class="font-extrabold block">Trucking</span>
-                            <span class="text-slate-400 group-hover:text-slate-800 text-[11px]">Inland Fleet & Trailer Transport</span>
+                        <a href="{{ route('services.trucking') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
+                            <span class="font-extrabold block text-sm">Trucking</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">Inland Fleet & Trailer Transport</span>
                         </a>
-                        <a href="{{ route('services.consolidation') }}" class="block px-4 py-2.5 text-xs text-slate-200 hover:bg-[#FECE00] hover:text-slate-950 transition rounded-lg mx-1">
-                            <span class="font-extrabold block">Consolidation</span>
-                            <span class="text-slate-400 group-hover:text-slate-800 text-[11px]">LCL / FCL Containerized Schedule</span>
+                        <a href="{{ route('services.consolidation') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
+                            <span class="font-extrabold block text-sm">Consolidation</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">LCL / FCL Containerized Schedule</span>
                         </a>
                     </div>
                 </div>
