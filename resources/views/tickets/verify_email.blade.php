@@ -14,10 +14,10 @@
             <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Email Pembuat Tiket *</label>
                 <input type="email" name="email" placeholder="email@perusahaan.com" required autofocus
-                    class="w-full px-4 py-3 border border-slate-300 rounded-xl text-sm focus:outline-none focus:border-[#00A3E0]">
+                    class="w-full px-4 py-3 border-2 border-neutral-300 rounded-xl text-sm focus:outline-none focus:border-black">
             </div>
 
-            <button type="submit" class="w-full bg-[#00A3E0] hover:bg-[#008CC2] text-white font-bold text-sm py-3.5 rounded-xl transition shadow-md">
+            <button type="submit" class="w-full bg-black hover:bg-neutral-800 text-[#FECE00] font-black text-sm py-3.5 rounded-xl transition shadow-md">
                 Konfirmasi & Buka Tiket
             </button>
         </form>

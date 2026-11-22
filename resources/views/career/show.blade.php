@@ -1,24 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-slate-100 py-10 px-4 sm:px-8 border-b border-slate-200">
+<div class="bg-[#FECE00] py-10 px-4 sm:px-8 border-b-2 border-black/15">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-            <div class="flex items-center space-x-2 text-xs text-slate-500 mb-2">
+            <div class="flex items-center space-x-2 text-xs text-neutral-900 font-bold mb-2">
                 <a href="{{ route('career.index') }}" class="hover:underline">Karir</a>
                 <span>&rsaquo;</span>
                 <span>{{ $job->department }}</span>
             </div>
-            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900">{{ $job->title }}</h1>
-            <div class="flex flex-wrap items-center gap-3 mt-3 text-xs text-slate-600">
-                <span class="bg-white border border-slate-300 px-3 py-1 rounded-full font-semibold">{{ $job->office->name }} ({{ $job->office->city }})</span>
-                <span class="bg-white border border-slate-300 px-3 py-1 rounded-full font-semibold">{{ $job->employment_type_label }}</span>
+            <h1 class="text-2xl sm:text-4xl font-black text-black">{{ $job->title }}</h1>
+            <div class="flex flex-wrap items-center gap-3 mt-3 text-xs text-black">
+                <span class="bg-white border border-black/20 px-3 py-1 rounded-full font-bold">{{ $job->office->name }} ({{ $job->office->city }})</span>
+                <span class="bg-white border border-black/20 px-3 py-1 rounded-full font-bold">{{ $job->employment_type_label }}</span>
                 @if ($job->salary_range)
-                    <span class="bg-emerald-50 border border-emerald-300 text-emerald-800 px-3 py-1 rounded-full font-semibold">{{ $job->salary_range }}</span>
+                    <span class="bg-black text-[#FECE00] px-3 py-1 rounded-full font-black">{{ $job->salary_range }}</span>
                 @endif
             </div>
         </div>
-        <a href="#apply-section" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition">
+        <a href="#apply-section" class="bg-black hover:bg-neutral-800 text-[#FECE00] font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition">
             Lamar Posisi Ini &darr;
         </a>
     </div>
@@ -155,7 +155,7 @@
             <div class="space-y-3">
                 @foreach ($relatedJobs as $rel)
                 <div class="border-b border-slate-100 pb-2 last:border-0">
-                    <a href="{{ route('career.show', $rel->slug) }}" class="text-xs font-bold text-slate-800 hover:text-[#00A3E0] block leading-snug">
+                    <a href="{{ route('career.show', $rel->slug) }}" class="text-xs font-bold text-black hover:underline decoration-[#FECE00] decoration-2 block leading-snug">
                         {{ $rel->title }}
                     </a>
                     <span class="text-[10px] text-slate-500">{{ $rel->office->city }} &bull; {{ $rel->employment_type_label }}</span>

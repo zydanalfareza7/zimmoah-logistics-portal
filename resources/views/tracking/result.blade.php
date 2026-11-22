@@ -6,15 +6,15 @@
     $orderedStages = ShipmentStage::ordered();
 @endphp
 
-<!-- Tracking Header & Search Bar -->
-<div class="bg-[#0B131F] text-white py-12 px-4 sm:px-8 border-b border-slate-800">
+<!-- Tracking Header & Search Bar (Signature Zimmoah Yellow) -->
+<div class="bg-[#FECE00] text-black py-12 px-4 sm:px-8 border-b-2 border-black/15">
     <div class="max-w-5xl mx-auto space-y-5">
         <div class="space-y-2">
-            <span class="inline-block text-xs uppercase tracking-widest font-black text-slate-950 bg-[#FECE00] px-3.5 py-1 rounded-full">
+            <span class="inline-block text-xs uppercase tracking-widest font-black text-[#FECE00] bg-black px-3.5 py-1 rounded-full">
                 {{ __('messages.tracking_badge') }}
             </span>
-            <h1 class="text-2xl sm:text-4xl font-black tracking-tight">
-                {{ __('messages.tracking_heading') }}@if($query): <span class="text-[#FECE00] font-mono">{{ $query }}</span>@endif
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight text-black">
+                {{ __('messages.tracking_heading') }}@if($query): <span class="bg-black text-[#FECE00] px-2.5 py-0.5 rounded-xl font-mono text-xl sm:text-3xl">{{ $query }}</span>@endif
             </h1>
         </div>
 
@@ -22,8 +22,8 @@
         <form action="{{ route('tracking') }}" method="GET" class="flex flex-col sm:flex-row gap-3 max-w-3xl">
             <input type="text" name="tracking_number" value="{{ $query }}"
                 placeholder="{{ __('messages.track_input_placeholder') }}"
-                class="flex-1 px-4 py-3.5 rounded-2xl bg-slate-900 border border-slate-700 text-white placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-[#FECE00] focus:ring-2 focus:ring-[#FECE00]/30 transition">
-            <button type="submit" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-7 py-3.5 rounded-2xl shadow-lg transition whitespace-nowrap">
+                class="flex-1 px-4 py-3.5 rounded-2xl bg-white border-2 border-black/20 text-black placeholder-neutral-500 text-sm font-bold focus:outline-none focus:border-black transition shadow-sm">
+            <button type="submit" class="bg-black hover:bg-neutral-800 text-[#FECE00] font-black text-sm px-7 py-3.5 rounded-2xl shadow-lg transition whitespace-nowrap">
                 {{ __('messages.track_button') }}
             </button>
         </form>
@@ -31,12 +31,12 @@
         <!-- Quick Sample Chips -->
         @if (!empty($sampleShipments) && $sampleShipments->count() > 0)
         <div class="flex flex-wrap items-center gap-2 text-xs pt-1">
-            <span class="text-slate-400 font-semibold">{{ __('messages.try_sample_tracking') }}</span>
+            <span class="text-neutral-900 font-extrabold">{{ __('messages.try_sample_tracking') }}</span>
             @foreach ($sampleShipments as $sample)
                 <a href="{{ route('tracking', ['tracking_number' => $sample->tracking_number]) }}"
-                    class="px-3 py-1 rounded-full border transition font-mono font-bold {{ strtoupper($query) === strtoupper($sample->tracking_number) ? 'bg-[#FECE00] text-slate-950 border-[#FECE00]' : 'bg-slate-900/80 text-slate-200 border-slate-700 hover:border-[#FECE00] hover:text-[#FECE00]' }}">
+                    class="px-3 py-1 rounded-full border-2 transition font-mono font-bold {{ strtoupper($query) === strtoupper($sample->tracking_number) ? 'bg-black text-[#FECE00] border-black' : 'bg-white text-black border-black/20 hover:border-black' }}">
                     {{ $sample->tracking_number }}
-                    <span class="font-sans font-normal opacity-75">({{ $sample->transport_mode }})</span>
+                    <span class="font-sans font-semibold opacity-75">({{ $sample->transport_mode }})</span>
                 </a>
             @endforeach
         </div>
@@ -52,7 +52,7 @@
         <div class="p-6 sm:p-8 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50/70">
             <div>
                 <div class="flex items-center gap-2.5 flex-wrap">
-                    <span class="px-2.5 py-1 rounded-lg bg-[#0B131F] text-[#FECE00] text-[11px] font-black tracking-wider uppercase">
+                    <span class="px-2.5 py-1 rounded-lg bg-black text-[#FECE00] text-[11px] font-black tracking-wider uppercase">
                         {{ $shipment->transport_mode }} FREIGHT
                     </span>
                     <span class="text-xs font-mono font-bold text-slate-500">

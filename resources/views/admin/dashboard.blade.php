@@ -9,7 +9,7 @@
             <p class="text-xs text-slate-500 mt-1">Pantau volume tiket kargo, kepatuhan respon SLA, dan pipeline rekrutmen talenta Zimmoah.</p>
         </div>
         <div class="flex items-center space-x-3">
-            <a href="{{ route('admin.tickets.index') }}" class="bg-[#00A3E0] hover:bg-[#008CC2] text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-sm">
+            <a href="{{ route('admin.tickets.index') }}" class="bg-black hover:bg-neutral-800 text-[#FECE00] font-black text-xs px-4 py-2.5 rounded-xl transition shadow-sm">
                 Lihat Semua Tiket &rarr;
             </a>
         </div>
@@ -59,7 +59,7 @@
         <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
             <div class="p-5 border-b border-slate-100 flex items-center justify-between">
                 <h3 class="text-sm font-bold text-slate-900">Tiket Layanan Masuk Terbaru</h3>
-                <a href="{{ route('admin.tickets.index') }}" class="text-xs font-bold text-[#00A3E0] hover:underline">Semua &rarr;</a>
+                <a href="{{ route('admin.tickets.index') }}" class="text-xs font-black text-black underline decoration-[#FECE00] decoration-2">Semua &rarr;</a>
             </div>
             <div class="divide-y divide-slate-100 text-xs">
                 @forelse ($recentTickets as $ticket)
@@ -74,7 +74,7 @@
                         <h4 class="font-semibold text-slate-800 line-clamp-1">{{ $ticket->subject }}</h4>
                         <span class="text-[10px] text-slate-400">{{ $ticket->customer_name }} &bull; {{ $ticket->created_at->diffForHumans() }}</span>
                     </div>
-                    <a href="{{ route('admin.tickets.show', $ticket->id) }}" class="text-xs font-bold text-slate-700 hover:text-[#00A3E0] px-3 py-1.5 rounded-lg border border-slate-200 hover:border-[#00A3E0] transition">
+                    <a href="{{ route('admin.tickets.show', $ticket->id) }}" class="text-xs font-bold text-black hover:bg-[#FECE00] px-3 py-1.5 rounded-lg border border-neutral-300 hover:border-black transition">
                         Buka
                     </a>
                 </div>
@@ -88,7 +88,7 @@
         <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
             <div class="p-5 border-b border-slate-100 flex items-center justify-between">
                 <h3 class="text-sm font-bold text-slate-900">Pelamar Karir Terbaru</h3>
-                <a href="{{ route('admin.applications.index') }}" class="text-xs font-bold text-[#00A3E0] hover:underline">Semua &rarr;</a>
+                <a href="{{ route('admin.applications.index') }}" class="text-xs font-black text-black underline decoration-[#FECE00] decoration-2">Semua &rarr;</a>
             </div>
             <div class="divide-y divide-slate-100 text-xs">
                 @forelse ($recentApplicants as $applicant)
@@ -103,7 +103,7 @@
                         <h4 class="text-slate-600 line-clamp-1">Posisi: <strong>{{ $applicant->jobPosting->title }}</strong></h4>
                         <span class="text-[10px] text-slate-400">{{ $applicant->email }} &bull; {{ $applicant->created_at->diffForHumans() }}</span>
                     </div>
-                    <a href="{{ route('admin.applications.show', $applicant->id) }}" class="text-xs font-bold text-slate-700 hover:text-[#00A3E0] px-3 py-1.5 rounded-lg border border-slate-200 hover:border-[#00A3E0] transition">
+                    <a href="{{ route('admin.applications.show', $applicant->id) }}" class="text-xs font-bold text-black hover:bg-[#FECE00] px-3 py-1.5 rounded-lg border border-neutral-300 hover:border-black transition">
                         Detail
                     </a>
                 </div>

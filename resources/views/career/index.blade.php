@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Career Hero Header -->
-<div class="bg-[#0B131F] text-white py-16 px-4 sm:px-8 border-b border-slate-800">
+<!-- Career Hero Header (Zimmoah Signature Yellow) -->
+<div class="bg-[#FECE00] text-black py-16 px-4 sm:px-8 border-b-2 border-black/15">
     <div class="max-w-7xl mx-auto space-y-4">
-        <span class="text-xs uppercase tracking-widest font-black text-slate-950 bg-[#FECE00] px-3.5 py-1 rounded-full">
+        <span class="inline-block text-xs uppercase tracking-widest font-black text-[#FECE00] bg-black px-3.5 py-1 rounded-full">
             Karir & Budaya Kerja
         </span>
-        <h1 class="text-3xl sm:text-5xl font-black tracking-tight">Tumbuh Bersama Zimmoah Global Logistics</h1>
-        <p class="text-slate-300 max-w-2xl text-sm sm:text-base leading-relaxed">
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-black">Tumbuh Bersama Zimmoah Global Logistics</h1>
+        <p class="text-neutral-900 font-medium max-w-2xl text-sm sm:text-base leading-relaxed">
             Bergabunglah dengan tim profesional rantai pasok global kami. Kembangkan keahlian Anda di lingkungan kerja multinasional yang kolaboratif dan inovatif.
         </p>
     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full bg-slate-100 text-slate-800">
+<html lang="id" class="h-full bg-[#FFFDF5] text-neutral-900">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,17 +18,17 @@
 </head>
 <body class="min-h-full flex flex-col md:flex-row antialiased">
 
-    <!-- Sidebar Navigation -->
-    <aside class="w-full md:w-64 bg-[#0B1522] text-white flex-shrink-0 flex flex-col justify-between border-r border-slate-800">
+    <!-- Sidebar Navigation (Zimmoah Black + Signature #FECE00 Brand Header) -->
+    <aside class="w-full md:w-64 bg-black text-white flex-shrink-0 flex flex-col justify-between border-r border-black">
         <div>
-            <!-- Admin Brand -->
-            <div class="p-6 border-b border-slate-800/80 flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-xl bg-[#FECE00] text-slate-950 flex items-center justify-center font-black text-lg shadow-md">
+            <!-- Admin Brand (Signature #FECE00 Yellow Strip matching zimmoah.com) -->
+            <div class="p-6 bg-[#FECE00] text-black border-b-2 border-black/15 flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-white text-[#FECE00] flex items-center justify-center font-black text-lg shadow-sm border border-black/10">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 48 48"><path d="M12 14h24v4.5L19.5 30H36v5H12v-4.5L28.5 19H12v-5z"/></svg>
                 </div>
                 <div>
-                    <h2 class="text-base font-black tracking-wider text-white">ZIMMOAH</h2>
-                    <span class="text-[9px] uppercase tracking-widest text-[#FECE00] font-black block -mt-1">OPERATIONS HUB</span>
+                    <h2 class="text-base font-black tracking-wider text-black">ZIMMOAH</h2>
+                    <span class="text-[9px] uppercase tracking-widest text-neutral-900 font-black block -mt-1">OPERATIONS HUB</span>
                 </div>
             </div>
 

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-[#0B131F] text-white py-14 px-4 sm:px-8 border-b border-slate-800">
+<div class="bg-[#FECE00] text-black py-14 px-4 sm:px-8 border-b-2 border-black/15">
     <div class="max-w-7xl mx-auto space-y-3">
-        <span class="text-xs uppercase tracking-widest font-black text-slate-950 bg-[#FECE00] px-3.5 py-1 rounded-full">
+        <span class="inline-block text-xs uppercase tracking-widest font-black text-[#FECE00] bg-black px-3.5 py-1 rounded-full">
             Shipping Schedules
         </span>
-        <h1 class="text-3xl sm:text-4xl font-black tracking-tight">Jadwal Keberangkatan Kapal & Kargo Udara</h1>
-        <p class="text-slate-300 text-sm max-w-2xl leading-relaxed">
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-black">Jadwal Keberangkatan Kapal & Kargo Udara</h1>
+        <p class="text-neutral-900 text-sm font-medium max-w-2xl leading-relaxed">
             Periksa jadwal pelayaran mingguan dari pelabuhan utama di Indonesia (Tanjung Priok, Tanjung Emas, Bandara Soekarno-Hatta) menuju hub global Asia-Pasifik.
         </p>
     </div>

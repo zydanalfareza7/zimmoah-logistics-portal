@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-[#0B131F] text-white py-14 px-4 sm:px-8 border-b border-slate-800">
+<div class="bg-[#FECE00] text-black py-14 px-4 sm:px-8 border-b-2 border-black/15">
     <div class="max-w-4xl mx-auto space-y-3">
-        <span class="text-xs uppercase tracking-widest font-black text-slate-950 bg-[#FECE00] px-3.5 py-1 rounded-full">
+        <span class="inline-block text-xs uppercase tracking-widest font-black text-[#FECE00] bg-black px-3.5 py-1 rounded-full">
             Customer Support & Helpdesk
         </span>
-        <h1 class="text-3xl sm:text-4xl font-black tracking-tight">Pusat Layanan Bantuan & Tiket Kargo</h1>
-        <p class="text-slate-300 text-sm leading-relaxed max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-black">Pusat Layanan Bantuan & Tiket Kargo</h1>
+        <p class="text-neutral-900 font-medium text-sm leading-relaxed max-w-2xl">
             Sampaikan inquiry jadwal, konfirmasi booking kargo, kendala operasional, atau penagihan invoice. Sistem kami terhubung dua arah dengan email resmi Zimmoah.
         </p>
     </div>

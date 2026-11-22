@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-[#0B131F] text-white py-16 px-4 sm:px-8 border-b border-slate-800">
+<div class="bg-[#FECE00] text-black py-16 px-4 sm:px-8 border-b-2 border-black/15">
     <div class="max-w-7xl mx-auto space-y-4">
-        <span class="text-xs uppercase tracking-widest font-black text-slate-950 bg-[#FECE00] px-3.5 py-1 rounded-full">
+        <span class="inline-block text-xs uppercase tracking-widest font-black text-[#FECE00] bg-black px-3.5 py-1 rounded-full">
             Global Cargo Movement
         </span>
-        <h1 class="text-3xl sm:text-5xl font-black tracking-tight">Air & Ocean Freight Forwarding</h1>
-        <p class="text-slate-300 max-w-2xl text-sm sm:text-base leading-relaxed">
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-black">Air & Ocean Freight Forwarding</h1>
+        <p class="text-neutral-900 font-medium max-w-2xl text-sm sm:text-base leading-relaxed">
             Menghubungkan eksportir dan importir Indonesia dengan rute pelayaran laut kontainer (FCL/LCL) dan kargo udara internasional berkecepatan tinggi.
         </p>
     </div>
