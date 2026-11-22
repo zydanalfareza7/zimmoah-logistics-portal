@@ -1,58 +1,129 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Zimmoah Global Logistics Portal
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Portal web logistik enterprise untuk **Zimmoah Global Logistics** yang dibangun menggunakan **Laravel 13** dan **PHP 8.4**, dengan standar UI modern terinspirasi Maersk, palet warna kuning khas Zimmoah (`#FECE00`), serta modul **Email Ticketing System** dan **Career & Recruitment (HR ATS)**.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Company Profile & Services**: Halaman layanan Forwarding, Warehousing, Trucking, Consolidation, profil perusahaan, dan informasi 3 kantor cabang resmi (Jakarta HQ, Soewarna Airport, Semarang).
+- **Schedules & Cargo Tracking**: Pencarian jadwal kapal/kargo (laut & udara) serta pelacakan resi/AWB/tiket.
+- **Email Ticketing System**:
+  - Formulir pembuatan tiket bantuan publik (`/tickets/create`) dan pelacakan status tiket (`/tickets/lookup`).
+  - Portal tiket pelanggan aman dengan verifikasi token email.
+  - Endpoint inbound email webhook (`POST /api/inbound-email`).
+  - Dashboard Helpdesk Staff (`/admin/tickets`) dengan fitur balasan dua arah, *internal notes*, dan pemantauan SLA.
+- **Career & Recruitment (HR ATS)**:
+  - Daftar lowongan kerja (`/careers`) dan formulir lamar cepat dengan unggah CV/Resume terproteksi di private storage (`storage/app/private/resumes`).
+  - Dashboard HR ATS (`/admin/careers`) untuk mengelola tahapan seleksi (*Applied -> Screening -> Interview -> Offered -> Rejected*), rating pelamar, catatan pewawancara, serta unduh CV aman via streaming terautentikasi.
+- **Keamanan**: Security headers middleware (`X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection`, `Referrer-Policy`), validasi input ketat, proteksi CSRF, dan private file storage.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Persyaratan Sistem
 
-## Learning Laravel
+- **PHP** `>= 8.3` (Direkomendasikan **PHP 8.4**) dengan ekstensi: `pdo_sqlite`, `sqlite3`, `mbstring`, `openssl`, `fileinfo`, `intl`, `zip`, `gd`, `curl`
+- **Composer** `>= 2.x`
+- **Node.js** `>= 20.x` & **NPM**
+- **Git**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Cara Menjalankan Project (Setelah Clone dari GitHub)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Ikuti langkah-langkah berikut di terminal (PowerShell / Git Bash / CMD):
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 1. Clone Repository
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone <URL_REPOSITORY_GITHUB>
+cd <nama-folder-repo>
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install Dependency PHP & Frontend
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### 3. Konfigurasi Environment (`.env`)
+Salin file `.env.example` menjadi `.env`, lalu buat application key:
+```bash
+# Windows (PowerShell / CMD)
+copy .env.example .env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Mac / Linux / Git Bash
+cp .env.example .env
 
-## Code of Conduct
+# Generate App Key
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Siapkan Database SQLite, Migrasi & Seeder
+Project ini sudah dikonfigurasi menggunakan SQLite secara default agar mudah dijalankan tanpa perlu setting XAMPP/MySQL manual.
+```bash
+# Buat file database SQLite kosong (Windows PowerShell)
+New-Item -ItemType File -Path database/database.sqlite -Force
 
-## Security Vulnerabilities
+# (Atau di Mac / Linux / Git Bash)
+touch database/database.sqlite
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Jalankan migrasi tabel & data awal (seeder)
+php artisan migrate --seed
+```
 
-## License
+### 5. Build Asset Frontend (Tailwind CSS & Vite)
+```bash
+npm run build
+```
+*(Untuk mode development dengan auto-reload CSS/JS, bisa jalankan `npm run dev` di terminal terpisah).*
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Jalankan Server Lokal
+```bash
+php artisan serve
+```
+Buka browser dan akses: **http://localhost:8000**
+
+---
+
+## Akun Demo (Staff / Admin)
+
+Akses halaman login admin di **http://localhost:8000/admin** menggunakan akun hasil seeder berikut:
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Super Admin** | `admin@zimmoah.com` | `password123` |
+| **Helpdesk Agent** | `agent@zimmoah.com` | `password123` |
+| **HR Recruiter** | `hr@zimmoah.com` | `password123` |
+
+---
+
+## Menjalankan Automated Tests
+
+```bash
+php artisan test
+```
+
+---
+
+## Panduan Kerja Paralel Tim (Git Workflow)
+
+Agar pengerjaan kelompok secara paralel rapi dan minim konflik (*merge conflict*):
+
+1. **Selalu update branch utama dulu sebelum mulai ngoding:**
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+2. **Buat branch baru untuk setiap fitur/tugas masing-masing anggota:**
+   ```bash
+   git checkout -b fitur/nama-tugas
+   # contoh: git checkout -b fitur/email-notification
+   ```
+3. **Commit perubahan secara berkala:**
+   ```bash
+   git add .
+   git commit -m "feat: deskripsi singkat perubahan"
+   ```
+4. **Push branch ke GitHub:**
+   ```bash
+   git push -u origin fitur/nama-tugas
+   ```
+5. **Buka Pull Request (PR)** di GitHub dari branch fitur Anda ke `main`, lalu minta teman satu tim untuk review sebelum di-merge.
