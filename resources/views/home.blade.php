@@ -17,24 +17,24 @@
         <div class="max-w-3xl space-y-6">
             <span class="inline-flex items-center gap-2 bg-[#FECE00]/20 border border-[#FECE00]/50 text-[#FECE00] text-xs uppercase tracking-widest font-black px-3.5 py-1.5 rounded-full shadow-sm">
                 <span class="w-2 h-2 rounded-full bg-[#FECE00] animate-pulse"></span>
-                End-to-End Supply Chain Solution
+                {{ __('messages.hero_badge') }}
             </span>
 
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-                Go the distance with <span class="text-[#FECE00]">seamless</span> freight transport.
+                {{ __('messages.hero_title_prefix') }} <span class="text-[#FECE00]">{{ __('messages.hero_title_highlight') }}</span> {{ __('messages.hero_title_suffix') }}
             </h1>
 
             <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
-                Kirim kargo Anda melalui armada laut, udara, atau darat - menghubungkan pelabuhan utama di Indonesia dengan jaringan logistik Asia-Pasifik secara efisien dan aman.
+                {{ __('messages.hero_subtitle') }}
             </p>
 
             <!-- CTA Buttons with Clear Bottom Spacing -->
             <div class="flex flex-wrap items-center gap-4 pt-4 mb-4">
                 <a href="#services" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-8 py-4 rounded-full shadow-xl transition transform hover:-translate-y-0.5">
-                    Explore our services
+                    {{ __('messages.hero_cta_services') }}
                 </a>
                 <a href="{{ route('tickets.create') }}" class="border-2 border-white/80 hover:border-[#FECE00] text-white hover:text-[#FECE00] hover:bg-white/10 font-black text-sm px-7 py-3.5 rounded-full transition shadow-lg">
-                    Buka Tiket Dukungan
+                    {{ __('messages.hero_cta_ticket') }}
                 </a>
             </div>
         </div>
@@ -48,15 +48,15 @@
         <div class="flex border-b border-slate-200 bg-slate-50 text-xs sm:text-sm font-black text-slate-600">
             <button onclick="switchTab('tracking-tab')" id="btn-tracking-tab" class="tab-btn flex-1 py-4 px-4 text-center border-b-2 border-[#FECE00] bg-white text-slate-950 flex items-center justify-center gap-2 transition">
                 <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                Track Cargo / Tiket
+                {{ __('messages.tab_track') }}
             </button>
             <button onclick="switchTab('schedules-tab')" id="btn-schedules-tab" class="tab-btn flex-1 py-4 px-4 text-center border-b-2 border-transparent hover:text-slate-950 flex items-center justify-center gap-2 transition">
                 <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Cari Jadwal Kapal
+                {{ __('messages.tab_schedules') }}
             </button>
             <button onclick="switchTab('quote-tab')" id="btn-quote-tab" class="tab-btn flex-1 py-4 px-4 text-center border-b-2 border-transparent hover:text-slate-950 flex items-center justify-center gap-2 transition hidden sm:flex">
                 <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                Inquiry Tarif Kargo
+                {{ __('messages.tab_quote') }}
             </button>
         </div>
 
@@ -64,20 +64,20 @@
         <div id="tracking-tab" class="tab-content p-6 sm:p-8">
             <form action="{{ route('tracking') }}" method="GET" class="flex flex-col sm:flex-row items-center gap-4">
                 <div class="relative flex-1 w-full">
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">Nomor AWB / Resi / Tiket Bantuan</label>
-                    <input type="text" name="tracking_number" placeholder="Contoh: ZIM-2026-9042 atau V.2641-N" 
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">{{ __('messages.track_input_label') }}</label>
+                    <input type="text" name="tracking_number" placeholder="{{ __('messages.track_input_placeholder') }}" 
                         class="w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00] focus:ring-2 focus:ring-[#FECE00]/30 transition">
                 </div>
                 <div class="w-full sm:w-auto pt-0 sm:pt-6">
                     <button type="submit" class="w-full sm:w-auto bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-8 py-3.5 rounded-2xl shadow-md transition flex items-center justify-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                        Lacak Sekarang
+                        {{ __('messages.track_button') }}
                     </button>
                 </div>
             </form>
-            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
-                <span>Mendukung pelacakan kargo kontainer laut, kargo udara, dan tiket bantuan pelanggan.</span>
-                <a href="{{ route('tickets.lookup') }}" class="text-amber-700 font-extrabold hover:underline">Pelacakan Khusus Tiket &rarr;</a>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
+                <span>{{ __('messages.track_helper') }}</span>
+                <a href="{{ route('tickets.lookup') }}" class="text-amber-700 font-extrabold hover:underline">{{ __('messages.track_ticket_link') }} &rarr;</a>
             </div>
         </div>
 
@@ -85,18 +85,18 @@
         <div id="schedules-tab" class="tab-content p-6 sm:p-8 hidden">
             <form action="{{ route('schedules.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">Pelabuhan / Kota Asal</label>
-                    <input type="text" name="origin" placeholder="Contoh: Jakarta / Tanjung Priok" 
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">{{ __('messages.origin_label') }}</label>
+                    <input type="text" name="origin" placeholder="{{ __('messages.origin_placeholder') }}" 
                         class="w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00]">
                 </div>
                 <div>
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">Pelabuhan / Kota Tujuan</label>
-                    <input type="text" name="destination" placeholder="Contoh: Busan / Incheon / Semarang" 
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-1.5">{{ __('messages.destination_label') }}</label>
+                    <input type="text" name="destination" placeholder="{{ __('messages.destination_placeholder') }}" 
                         class="w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 focus:outline-none focus:border-[#FECE00]">
                 </div>
                 <div class="pt-0 sm:pt-6">
                     <button type="submit" class="w-full bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-6 py-3.5 rounded-2xl shadow-md transition">
-                        Cari Rute & Jadwal
+                        {{ __('messages.search_route_btn') }}
                     </button>
                 </div>
             </form>
@@ -106,11 +106,11 @@
         <div id="quote-tab" class="tab-content p-6 sm:p-8 hidden">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
-                    <h4 class="text-base font-black text-slate-900">Butuh Penawaran Tarif Pengiriman Kargo Korporat?</h4>
-                    <p class="text-xs text-slate-600 mt-1">Tim sales dan operasional Zimmoah siap menghitungkan estimasi biaya terbaik untuk FCL, LCL, atau Air Freight.</p>
+                    <h4 class="text-base font-black text-slate-900">{{ __('messages.quote_title') }}</h4>
+                    <p class="text-xs text-slate-600 mt-1">{{ __('messages.quote_desc') }}</p>
                 </div>
                 <a href="{{ route('tickets.create') }}" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black text-sm px-7 py-3.5 rounded-2xl transition shadow-md whitespace-nowrap">
-                    Kirim Inquiry Penawaran &rarr;
+                    {{ __('messages.quote_btn') }} &rarr;
                 </a>
             </div>
         </div>

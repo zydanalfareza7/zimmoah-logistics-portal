@@ -275,5 +275,8 @@ class DatabaseSeeder extends Seeder
             'body_text' => 'Catatan Internal: Slot sudah diparaf oleh tim liner, tinggal menunggu penyerahan final booking order dari Pak Hendra sore ini.',
             'is_internal_note' => true,
         ]);
+
+        // 8. Sample Cargo Shipments (Maersk-style Milestone Tracking)
+        $this->call(ShipmentSeeder::class);
     }
 }

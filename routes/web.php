@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // 1. Public Facing Pages (Maersk Inspired UI)
+Route::get('/lang/{locale}', [HomeController::class, 'switchLocale'])->name('locale.switch');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tracking', [HomeController::class, 'tracking'])->name('tracking');
 Route::get('/schedules', [ScheduleController::class, 'index'])->name('schedules.index');

@@ -128,4 +128,42 @@ class ZimmoahPlatformTest extends TestCase
         $authResponse->assertSee('Overview Operasional');
         $authResponse->assertSee('Total Tiket');
     }
+
+    public function test_language_switcher_changes_locale_between_en_ko_and_id(): void
+    {
+        // Switch to Korean
+        $this->get('/lang/ko')->assertRedirect();
+        $koResponse = $this->get('/');
+        $koResponse->assertStatus(200);
+        $koResponse->assertSee('운항 스케줄');
+        $koResponse->assertSee('화물 추적');
+
+        // Switch to English
+        $this->get('/lang/en')->assertRedirect();
+        $enResponse = $this->get('/');
+        $enResponse->assertStatus(200);
+        $enResponse->assertSee('All Branch Operations Normal');
+        $enResponse->assertSee('Open Inquiry Ticket');
+
+        // Switch back to Indonesian
+        $this->get('/lang/id')->assertRedirect();
+        $idResponse = $this->get('/');
+        $idResponse->assertStatus(200);
+        $idResponse->assertSee('Operasional Seluruh Cabang Normal');
+    }
+
+    public function test_cargo_tracking_displays_shipment_with_maersk_milestone_progress(): void
+    {
+        $response = $this->get('/tracking?tracking_number=ZIM-CARGO-9042');
+
+        $response->assertStatus(200);
+        $response->assertSee('ZIM-CARGO-9042');
+        $response->assertSee('ZIMU-4092817');
+        $response->assertSee('Booked');
+        $response->assertSee('Gate In');
+        $response->assertSee('On Vessel');
+        $response->assertSee('Customs Clearance');
+        $response->assertSee('Delivered');
+        $response->assertSee('Step 3 / 5 (55%)');
+    }
 }

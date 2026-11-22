@@ -29,37 +29,42 @@
                         <span class="absolute left-3 text-slate-400">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                         </span>
-                        <input type="text" name="tracking_number" placeholder="Track Cargo / Ask Zimmoah..." 
+                        <input type="text" name="tracking_number" placeholder="{{ __('messages.search_placeholder') }}" 
                             class="pl-8 pr-3 py-1 bg-slate-900 border border-slate-700/80 rounded-full text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#FECE00] transition w-56">
                     </form>
                     <span class="hidden lg:inline-flex items-center gap-1.5 text-slate-400 text-[11px]">
                         <span class="w-2 h-2 rounded-full bg-[#FECE00] animate-pulse"></span>
-                        Operasional Seluruh Cabang Normal
+                        {{ __('messages.ops_normal') }}
                     </span>
                 </div>
 
                 <!-- Right Utility Menu -->
                 <div class="flex items-center space-x-5 text-slate-300 ml-auto">
-                    <div class="flex items-center space-x-1 cursor-pointer hover:text-[#FECE00] transition">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
-                        <span class="font-bold">English | Korean | Indonesian</span>
+                    @php $currentLocale = app()->getLocale(); @endphp
+                    <div class="flex items-center space-x-1.5" aria-label="Language Switcher">
+                        <svg class="w-3.5 h-3.5 text-[#FECE00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        <a href="{{ route('locale.switch', 'en') }}" class="transition {{ $currentLocale === 'en' ? 'text-[#FECE00] font-black underline underline-offset-4' : 'text-slate-300 hover:text-white font-semibold' }}">English</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="{{ route('locale.switch', 'ko') }}" class="transition {{ $currentLocale === 'ko' ? 'text-[#FECE00] font-black underline underline-offset-4' : 'text-slate-300 hover:text-white font-semibold' }}">한국어</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="{{ route('locale.switch', 'id') }}" class="transition {{ $currentLocale === 'id' ? 'text-[#FECE00] font-black underline underline-offset-4' : 'text-slate-300 hover:text-white font-semibold' }}">Indonesian</a>
                     </div>
 
                     <a href="{{ route('tickets.track') }}" class="hover:text-[#FECE00] transition flex items-center space-x-1">
                         <svg class="w-3.5 h-3.5 text-[#FECE00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Support & Tiket</span>
+                        <span>{{ __('messages.support_tickets') }}</span>
                     </a>
 
-                    <a href="{{ route('contact') }}" class="hover:text-[#FECE00] transition hidden sm:inline-block">Kontak Cabang</a>
+                    <a href="{{ route('contact') }}" class="hover:text-[#FECE00] transition hidden sm:inline-block">{{ __('messages.branch_contact') }}</a>
 
                     @auth
                         <a href="{{ route('admin.dashboard') }}" class="text-[#FECE00] font-bold hover:underline flex items-center gap-1">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            Panel Staf ({{ Auth::user()->name }})
+                            {{ __('messages.staff_panel') }} ({{ Auth::user()->name }})
                         </a>
                     @else
                         <a href="{{ route('admin.login') }}" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 font-black px-3.5 py-1 rounded-full transition shadow-sm">
-                            Staff Login
+                            {{ __('messages.staff_login') }}
                         </a>
                     @endauth
                 </div>
@@ -84,47 +89,47 @@
 
             <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
-                <a href="{{ route('schedules.index') }}" class="hover:text-[#FECE00] transition {{ request()->routeIs('schedules.*') ? 'text-[#FECE00] font-bold border-b-2 border-[#FECE00] pb-1' : 'text-slate-200' }}">Schedules</a>
-                <a href="{{ route('tracking') }}" class="hover:text-[#FECE00] transition {{ request()->routeIs('tracking') ? 'text-[#FECE00] font-bold border-b-2 border-[#FECE00] pb-1' : 'text-slate-200' }}">Tracking</a>
+                <a href="{{ route('schedules.index') }}" class="hover:text-[#FECE00] transition {{ request()->routeIs('schedules.*') ? 'text-[#FECE00] font-bold border-b-2 border-[#FECE00] pb-1' : 'text-slate-200' }}">{{ __('messages.nav_schedules') }}</a>
+                <a href="{{ route('tracking') }}" class="hover:text-[#FECE00] transition {{ request()->routeIs('tracking') ? 'text-[#FECE00] font-bold border-b-2 border-[#FECE00] pb-1' : 'text-slate-200' }}">{{ __('messages.nav_tracking') }}</a>
                 
                 <!-- Services Dropdown -->
                 <div class="relative group">
                     <button class="flex items-center space-x-1 hover:text-[#FECE00] transition text-slate-200 py-2">
-                        <span>Services</span>
+                        <span>{{ __('messages.nav_services') }}</span>
                         <svg class="w-3.5 h-3.5 transition group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="absolute left-0 mt-0 w-72 bg-slate-950 rounded-2xl shadow-2xl border border-slate-700 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <a href="{{ route('services.forwarding') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
-                            <span class="font-extrabold block text-sm">Freight Forwarding</span>
-                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">Ocean & Air Cargo International</span>
+                            <span class="font-extrabold block text-sm">{{ __('messages.svc_forwarding') }}</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">{{ __('messages.svc_forwarding_desc') }}</span>
                         </a>
                         <a href="{{ route('services.warehousing') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
-                            <span class="font-extrabold block text-sm">Warehousing</span>
-                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">Gudang Transit & Customs Clearance</span>
+                            <span class="font-extrabold block text-sm">{{ __('messages.svc_warehousing') }}</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">{{ __('messages.svc_warehousing_desc') }}</span>
                         </a>
                         <a href="{{ route('services.trucking') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
-                            <span class="font-extrabold block text-sm">Trucking</span>
-                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">Inland Fleet & Trailer Transport</span>
+                            <span class="font-extrabold block text-sm">{{ __('messages.svc_trucking') }}</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">{{ __('messages.svc_trucking_desc') }}</span>
                         </a>
                         <a href="{{ route('services.consolidation') }}" class="group/item block px-4 py-2.5 text-xs text-white hover:bg-[#FECE00] hover:text-slate-950 transition rounded-xl mx-1.5">
-                            <span class="font-extrabold block text-sm">Consolidation</span>
-                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">LCL / FCL Containerized Schedule</span>
+                            <span class="font-extrabold block text-sm">{{ __('messages.svc_consolidation') }}</span>
+                            <span class="text-slate-300 group-hover/item:text-slate-900 text-[11px] font-medium block mt-0.5">{{ __('messages.svc_consolidation_desc') }}</span>
                         </a>
                     </div>
                 </div>
 
                 <a href="{{ route('career.index') }}" class="hover:text-[#FECE00] transition {{ request()->routeIs('career.*') ? 'text-[#FECE00] font-bold border-b-2 border-[#FECE00] pb-1' : 'text-slate-200' }}">
-                    Career
-                    <span class="ml-1 text-[10px] bg-[#FECE00] text-slate-950 px-1.5 py-0.5 rounded-full font-black">Hiring</span>
+                    {{ __('messages.nav_career') }}
+                    <span class="ml-1 text-[10px] bg-[#FECE00] text-slate-950 px-1.5 py-0.5 rounded-full font-black">{{ __('messages.nav_hiring') }}</span>
                 </a>
-                <a href="{{ route('company.profile') }}" class="hover:text-[#FECE00] transition {{ request()->routeIs('company.profile') ? 'text-[#FECE00] font-bold border-b-2 border-[#FECE00] pb-1' : 'text-slate-200' }}">Company</a>
+                <a href="{{ route('company.profile') }}" class="hover:text-[#FECE00] transition {{ request()->routeIs('company.profile') ? 'text-[#FECE00] font-bold border-b-2 border-[#FECE00] pb-1' : 'text-slate-200' }}">{{ __('messages.nav_company') }}</a>
             </nav>
 
             <!-- CTA Button (Yellow Accent) -->
             <div class="hidden sm:flex items-center space-x-3">
                 <a href="{{ route('tickets.create') }}" class="bg-[#FECE00] hover:bg-[#E5B800] text-slate-950 text-xs font-black px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition flex items-center gap-1.5">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                    Buka Tiket Inquiry
+                    {{ __('messages.open_inquiry_ticket') }}
                 </a>
             </div>
 
