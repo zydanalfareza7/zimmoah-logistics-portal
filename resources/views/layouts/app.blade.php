@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/zimmoah-favicon.svg') }}">
     <title>{{ $title ?? 'Zimmoah Logistics - Forwarding, Warehousing, Trucking & Consolidation' }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,18 +74,11 @@
 
         <!-- Main Primary Navigation (Signature Zimmoah Yellow #FECE00) -->
         <div class="bg-[#FECE00] text-black border-b-2 border-black/15">
-            <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-                <!-- Official Zimmoah.com Logo (White Rounded Square + Yellow Z + Bold Black ZIMMOAH) -->
-                <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-white text-[#FECE00] flex items-center justify-center font-black shadow-sm border border-black/10 group-hover:scale-105 transition-transform flex-shrink-0">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 48 48">
-                            <path d="M12 14h24v4.5L19.5 30H36v5H12v-4.5L28.5 19H12v-5z"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-2xl font-black tracking-wider text-black leading-none">ZIMMOAH</span>
-                        <span class="text-[9px] uppercase tracking-widest text-neutral-900 font-extrabold mt-0.5">GLOBAL LOGISTICS</span>
-                    </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 py-2.5 flex items-center justify-between">
+                <!-- Official Zimmoah.com Stacked Vector Logo (White Squircle Z + ZIMMOAH AH Wave) -->
+                <a href="{{ route('home') }}" class="flex items-center group" aria-label="ZIMMOAH Home">
+                    <img src="{{ asset('images/zimmoah-logo.svg') }}" alt="ZIMMOAH" class="h-12 sm:h-14 w-auto group-hover:scale-105 transition-transform">
+                    <span class="sr-only">ZIMMOAH</span>
                 </a>
 
                 <!-- Desktop Nav Links -->
@@ -213,17 +207,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <!-- Col 1: Brand & Bio -->
             <div class="space-y-4">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-white text-[#FECE00] flex items-center justify-center font-black shadow-sm border border-black/10">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 48 48">
-                            <path d="M12 14h24v4.5L19.5 30H36v5H12v-4.5L28.5 19H12v-5z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <span class="text-2xl font-black tracking-wider text-black block leading-none">ZIMMOAH</span>
-                        <span class="text-[9px] uppercase tracking-widest text-neutral-900 font-extrabold">GLOBAL LOGISTICS</span>
-                    </div>
-                </div>
+                <a href="{{ route('home') }}" class="inline-block">
+                    <img src="{{ asset('images/zimmoah-logo.svg') }}" alt="ZIMMOAH" class="h-16 w-auto">
+                </a>
                 <p class="text-xs text-neutral-900 font-medium leading-relaxed">
                     Penyedia layanan logistik, trucking, pergudangan, dan freight forwarding global terintegrasi dengan jaringan rute Asia-Pasifik dan domestik Indonesia.
                 </p>

@@ -22,14 +22,9 @@
     <aside class="w-full md:w-64 bg-black text-white flex-shrink-0 flex flex-col justify-between border-r border-black">
         <div>
             <!-- Admin Brand (Signature #FECE00 Yellow Strip matching zimmoah.com) -->
-            <div class="p-6 bg-[#FECE00] text-black border-b-2 border-black/15 flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-xl bg-white text-[#FECE00] flex items-center justify-center font-black text-lg shadow-sm border border-black/10">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 48 48"><path d="M12 14h24v4.5L19.5 30H36v5H12v-4.5L28.5 19H12v-5z"/></svg>
-                </div>
-                <div>
-                    <h2 class="text-base font-black tracking-wider text-black">ZIMMOAH</h2>
-                    <span class="text-[9px] uppercase tracking-widest text-neutral-900 font-black block -mt-1">OPERATIONS HUB</span>
-                </div>
+            <div class="px-6 py-5 bg-[#FECE00] text-black border-b-2 border-black/15 flex flex-col items-center text-center">
+                <img src="{{ asset('images/zimmoah-logo.svg') }}" alt="ZIMMOAH" class="h-14 w-auto">
+                <span class="text-[9px] uppercase tracking-widest text-neutral-900 font-black mt-1.5 bg-black/10 px-2.5 py-0.5 rounded-full">OPERATIONS HUB</span>
             </div>
 
             <!-- Navigation Links -->

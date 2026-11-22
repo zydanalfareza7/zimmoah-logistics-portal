@@ -18,11 +18,11 @@
 <body class="min-h-full flex items-center justify-center p-4 bg-[#FECE00]">
     <div class="max-w-md w-full bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border-2 border-black/15 space-y-6">
         <!-- Brand Header -->
-        <div class="text-center space-y-2">
-            <div class="w-12 h-12 rounded-2xl bg-[#FECE00] text-black border border-black/15 flex items-center justify-center font-black text-2xl mx-auto shadow-md">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 48 48"><path d="M12 14h24v4.5L19.5 30H36v5H12v-4.5L28.5 19H12v-5z"/></svg>
+        <div class="text-center space-y-3">
+            <div class="inline-flex items-center justify-center bg-[#FECE00] px-6 py-3.5 rounded-2xl shadow-sm border border-black/10">
+                <img src="{{ asset('images/zimmoah-logo.svg') }}" alt="ZIMMOAH" class="h-14 w-auto">
             </div>
-            <h1 class="text-2xl font-black text-black tracking-tight">ZIMMOAH OPERATIONS</h1>
+            <p class="text-xs font-bold uppercase tracking-widest text-neutral-800">Operations &amp; Helpdesk Portal</p>
             <p class="text-xs text-neutral-600">Masuk ke panel Helpdesk, Rekrutmen HR & Manajemen Kargo.</p>
         </div>
 

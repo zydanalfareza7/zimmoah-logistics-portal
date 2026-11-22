@@ -1,8 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
-  <!-- Zimmoah Emblem -->
-  <rect x="0" y="0" width="48" height="48" rx="12" fill="#FECE00"/>
-  <path d="M12 14h24v4.5L19.5 30H36v5H12v-4.5L28.5 19H12v-5z" fill="#FFFFFF"/>
-  <!-- ZIMMOAH Text -->
-  <text x="62" y="32" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="24" font-weight="900" letter-spacing="1.5" fill="#111827">ZIMMOAH</text>
-  <text x="63" y="44" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="8" font-weight="700" letter-spacing="3" fill="#D97706">GLOBAL LOGISTICS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 242 104" fill="none" role="img" aria-label="Zimmoah Official Logo">
+  <defs>
+    <!-- Cutout mask for the chunky rounded Z inside the white squircle -->
+    <mask id="zimmoah-z-cutout">
+      <rect x="0" y="0" width="242" height="104" fill="white"/>
+      <path d="M110.5 17.5 H131.5 L110.5 39.5 H131.5"
+            stroke="black" stroke-width="8.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </mask>
+
+    <!-- Signature sweeping wave cutout across the A and H of ZIMMOAH -->
+    <mask id="zimmoah-ah-wave">
+      <rect x="0" y="0" width="242" height="104" fill="white"/>
+      <path d="M167 83.5 Q 194 76.5 232 74.5"
+            stroke="black" stroke-width="3.6" stroke-linecap="round" fill="none"/>
+    </mask>
+  </defs>
+
+  <!-- 1. Official White Rounded Squircle with Cutout Z (centered above ZIMMOAH) -->
+  <rect x="96" y="3" width="50" height="50" rx="12.5" fill="#FFFFFF" mask="url(#zimmoah-z-cutout)"/>
+
+  <!-- 2. Official ZIMMOAH Bold Rounded Wordmark with Signature Wave Slice across AH -->
+  <g stroke="#1B1205" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round" fill="none" mask="url(#zimmoah-ah-wave)">
+    <!-- Z -->
+    <path d="M15 66.5 H36 L15 92.5 H36"/>
+    <!-- I -->
+    <path d="M47.5 66.5 V92.5"/>
+    <!-- M -->
+    <path d="M59.5 92.5 V66.5 L72.5 85 L85.5 66.5 V92.5"/>
+    <!-- M -->
+    <path d="M97.5 92.5 V66.5 L110.5 85 L123.5 66.5 V92.5"/>
+    <!-- O -->
+    <ellipse cx="147.5" cy="79.5" rx="12.2" ry="13"/>
+    <!-- A -->
+    <path d="M170.5 92.5 L180.5 67.2 Q182.5 64 184.5 67.2 L194.5 92.5"/>
+    <path d="M174.5 83.5 H190.5"/>
+    <!-- H -->
+    <path d="M204.5 66.5 V92.5"/>
+    <path d="M226.5 66.5 V92.5"/>
+    <path d="M204.5 79.5 H226.5"/>
+  </g>
 </svg>
