@@ -1,6 +1,24 @@
 # Zimmoah Global Logistics Portal
 
-Portal web logistik enterprise untuk **Zimmoah Global Logistics** yang dibangun menggunakan **Laravel 13** dan **PHP 8.4**, dengan standar UI modern terinspirasi Maersk, palet warna kuning khas Zimmoah (`#FECE00`), serta modul **Email Ticketing System** dan **Career & Recruitment (HR ATS)**.
+Portal web logistik enterprise untuk **PT. Zimmoah Marine Trans (Zimmoah Global Logistics)** yang dibangun menggunakan **Laravel 13** dan **PHP 8.4**, dengan standar UI modern terinspirasi Maersk, palet warna kuning khas Zimmoah (`#FECE00`), integrasi konten & aset resmi `zimmoah.com`, **Zimmoah Assistant Chatbot**, serta modul **Email Ticketing System** dan **Career & Recruitment (HR ATS)**.
+
+## Preview Tampilan Website
+
+![Homepage Zimmoah Global Logistics Portal](.github/screenshots/01-home.png)
+
+| Layanan Logistik (4 Pilar HD) | Pelacakan Kargo 5-Tahap Real-Time |
+| :---: | :---: |
+| ![4 Pilar Layanan Logistik](.github/screenshots/02-services.png) | ![Cargo Tracking 5-Step](.github/screenshots/03-tracking.png) |
+
+| Jadwal Pelayaran & PDF Resmi | Sejarah & Profil Perusahaan (1989–Kini) |
+| :---: | :---: |
+| ![Shipping Schedules & Official PDF](.github/screenshots/04-schedules.png) | ![Company History 1989-Present](.github/screenshots/05-company-history.png) |
+
+### Chatbot Publik — Zimmoah Assistant (Live DB + Opsional Gemini AI)
+
+![Zimmoah Assistant Chatbot](.github/screenshots/06-chatbot.png)
+
+---
 
 ## Fitur Utama
 

@@ -31,7 +31,11 @@ class Schedule extends Model
     public function getDurationAttribute(): string
     {
         if ($this->departure_time && $this->arrival_time) {
-            $days = $this->departure_time->diffInDays($this->arrival_time);
+            $hours = (int) round(abs($this->departure_time->diffInMinutes($this->arrival_time)) / 60);
+            if ($hours < 24) {
+                return max(1, $hours) . ' Jam Transit';
+            }
+            $days = (int) round($hours / 24);
             return "{$days} Hari Transit";
         }
         return '-';
