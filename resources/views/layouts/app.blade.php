@@ -116,7 +116,48 @@
                         {{ __('messages.nav_career') }}
                         <span class="ml-1.5 text-[10px] bg-black text-[#FECE00] px-2 py-0.5 rounded-full font-black">{{ __('messages.nav_hiring') }}</span>
                     </a>
-                    <a href="{{ route('company.profile') }}" class="hover:opacity-70 transition {{ request()->routeIs('company.profile') ? 'font-black border-b-2 border-black pb-1' : '' }}">{{ __('messages.nav_company') }}</a>
+
+                    <!-- Company Dropdown (All Official Zimmoah.com Corporate Sections) -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:opacity-75 transition text-black py-2 font-bold {{ request()->routeIs('company.*') || request()->routeIs('contact') ? 'font-black border-b-2 border-black' : '' }}">
+                            <span>{{ __('messages.nav_company') }}</span>
+                            <svg class="w-3.5 h-3.5 transition group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="absolute right-0 mt-0 w-80 bg-white rounded-2xl shadow-2xl border-2 border-black/15 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="{{ route('company.profile') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_profile') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_profile_desc') }}</span>
+                            </a>
+                            <a href="{{ route('company.ceo') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_ceo') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_ceo_desc') }}</span>
+                            </a>
+                            <a href="{{ route('company.history') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_history') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_history_desc') }}</span>
+                            </a>
+                            <a href="{{ route('company.cip') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_cip') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_cip_desc') }}</span>
+                            </a>
+                            <a href="{{ route('company.license') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_license') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_license_desc') }}</span>
+                            </a>
+                            <a href="{{ route('company.organization') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_organization') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_organization_desc') }}</span>
+                            </a>
+                            <a href="{{ route('company.branches') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_branches') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_branches_desc') }}</span>
+                            </a>
+                            <a href="{{ route('contact') }}" class="group/item block px-4 py-2 text-xs text-black hover:bg-[#FECE00] transition rounded-xl mx-1.5">
+                                <span class="font-black block text-sm text-black">{{ __('messages.cmp_directory') }}</span>
+                                <span class="text-neutral-600 group-hover/item:text-black text-[11px] font-medium block">{{ __('messages.cmp_directory_desc') }}</span>
+                            </a>
+                        </div>
+                    </div>
                 </nav>
 
                 <!-- CTA Button (Solid Black + Signature Yellow Text) -->
@@ -146,7 +187,17 @@
                 <a href="{{ route('services.consolidation') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.svc_consolidation') }}</a>
             </div>
             <a href="{{ route('career.index') }}" class="block py-1.5 hover:underline">{{ __('messages.nav_career') }}</a>
-            <a href="{{ route('company.profile') }}" class="block py-1.5 hover:underline">{{ __('messages.nav_company') }}</a>
+            <div class="py-2 border-y border-black/15 space-y-1">
+                <span class="text-[11px] uppercase text-black font-black tracking-wider">{{ __('messages.nav_company') }}</span>
+                <a href="{{ route('company.profile') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_profile') }}</a>
+                <a href="{{ route('company.ceo') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_ceo') }}</a>
+                <a href="{{ route('company.history') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_history') }}</a>
+                <a href="{{ route('company.cip') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_cip') }}</a>
+                <a href="{{ route('company.license') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_license') }}</a>
+                <a href="{{ route('company.organization') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_organization') }}</a>
+                <a href="{{ route('company.branches') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_branches') }}</a>
+                <a href="{{ route('contact') }}" class="block py-1 text-xs text-neutral-900 hover:underline">{{ __('messages.cmp_directory') }}</a>
+            </div>
             <a href="{{ route('tickets.create') }}" class="inline-block mt-1 bg-black text-[#FECE00] px-4 py-2 rounded-full text-xs font-black">{{ __('messages.open_inquiry_ticket') }}</a>
         </div>
     </header>
@@ -201,6 +252,9 @@
         </a>
     </div>
 
+    <!-- 4B. FLOATING ZIMMOAH ASSISTANT CHATBOT -->
+    @include('components.chatbot-widget')
+
     <!-- 5. ZIMMOAH CORPORATE FOOTER (SIGNATURE #FECE00 YELLOW FOOTER LIKE ZIMMOAH.COM) -->
     <footer class="bg-[#FECE00] text-black border-t-4 border-black mt-20">
         <!-- Main Footer Links & 3 Official Offices -->
@@ -223,31 +277,35 @@
 
             <!-- Col 2: Services & Quick Links -->
             <div>
-                <h4 class="text-xs font-black text-black uppercase tracking-widest mb-4 border-b-2 border-black/20 pb-2">Layanan Logistik</h4>
+                <h4 class="text-xs font-black text-black uppercase tracking-widest mb-4 border-b-2 border-black/20 pb-2">Layanan &amp; Perusahaan</h4>
                 <ul class="space-y-2 text-xs text-neutral-900 font-semibold">
-                    <li><a href="{{ route('services.forwarding') }}" class="hover:underline">Air & Ocean Freight Forwarding</a></li>
-                    <li><a href="{{ route('services.warehousing') }}" class="hover:underline">Warehousing & Bonded Storage</a></li>
-                    <li><a href="{{ route('services.trucking') }}" class="hover:underline">Inland Trucking & Trailer Fleet</a></li>
+                    <li><a href="{{ route('services.forwarding') }}" class="hover:underline">Air &amp; Ocean Freight Forwarding</a></li>
+                    <li><a href="{{ route('services.warehousing') }}" class="hover:underline">Warehousing &amp; Bonded Storage</a></li>
+                    <li><a href="{{ route('services.trucking') }}" class="hover:underline">Inland Trucking &amp; Trailer Fleet</a></li>
                     <li><a href="{{ route('services.consolidation') }}" class="hover:underline">Consolidation Services (LCL/FCL)</a></li>
-                    <li><a href="{{ route('schedules.index') }}" class="hover:underline">Jadwal Keberangkatan Kapal & Pesawat</a></li>
-                    <li><a href="{{ route('career.index') }}" class="hover:underline">Karir & Rekrutmen Perusahaan</a></li>
+                    <li><a href="{{ route('schedules.index') }}" class="hover:underline">Jadwal Kapal &amp; Pesawat (+ PDF)</a></li>
+                    <li><a href="{{ route('company.ceo') }}" class="hover:underline">{{ __('messages.cmp_ceo') }}</a></li>
+                    <li><a href="{{ route('company.history') }}" class="hover:underline">{{ __('messages.cmp_history') }}</a></li>
+                    <li><a href="{{ route('company.cip') }}" class="hover:underline">{{ __('messages.cmp_cip') }}</a></li>
+                    <li><a href="{{ route('company.branches') }}" class="hover:underline">{{ __('messages.cmp_branches') }}</a></li>
+                    <li><a href="{{ route('career.index') }}" class="hover:underline">Karir &amp; Rekrutmen Perusahaan</a></li>
                 </ul>
             </div>
 
             <!-- Col 3: Jakarta Head Office & Airport Office -->
             <div>
-                <h4 class="text-xs font-black text-black uppercase tracking-widest mb-4 border-b-2 border-black/20 pb-2">Jakarta & Airport Office</h4>
+                <h4 class="text-xs font-black text-black uppercase tracking-widest mb-4 border-b-2 border-black/20 pb-2">Jakarta &amp; Airport Office</h4>
                 <div class="space-y-3 text-xs text-neutral-900">
                     <div>
                         <strong class="text-black font-black block">Jakarta Head Office</strong>
                         <span>Kirana Boutique Office, Jl. Kirana Avenue 2 Blok D2 No. 10-11 Kelapa Gading, Jakarta Utara 14240</span>
-                        <p class="mt-1 font-semibold">Tel: +62-21 2937 5570 | Fax: +62-21 2937 5571</p>
+                        <p class="mt-1 font-semibold">Tel: +(62-21) 2937 5670 (Hunting) | Fax: +(62-21) 2937 5671</p>
                         <p class="font-black underline">zimmoah@zimmoah.com</p>
                     </div>
                     <div class="pt-2.5 border-t border-black/15">
                         <strong class="text-black font-black block">Airport Office (Soekarno-Hatta)</strong>
                         <span>Wisma Soewarna Suite 2-F, Soewarna Bisnis Park, Bandara Soekarno-Hatta</span>
-                        <p class="mt-1 font-semibold">Tel: +62-21 5591 1663 | Fax: +62-21 5591 1640</p>
+                        <p class="mt-1 font-semibold">Tel: +(62-21) 5591 1853 | Fax: +(62-21) 5695 6640</p>
                         <p class="font-black underline">aircargo@zimmoah.com</p>
                     </div>
                 </div>
@@ -259,13 +317,13 @@
                 <div class="space-y-3 text-xs text-neutral-900">
                     <div>
                         <strong class="text-black font-black block">Semarang Office</strong>
-                        <span>Jl. Puri Anjasmoro Block EE1 No. 17A, Tawangsari, Semarang Barat, Kota Semarang 50144</span>
-                        <p class="mt-1 font-semibold">Tel: +62-24 7643 4641 | Fax: +62-24 7643 4168</p>
+                        <span>Jl. Puri Anjasmoro Block EE1 No. 17A, Tawangsari, Kec. Semarang Barat, Kota Semarang 50144</span>
+                        <p class="mt-1 font-semibold">Tel: +(62-24) 7643 4641 / 7643 4861 | Fax: +(62-24) 7643 4158</p>
                         <p class="font-black underline">semarang@zimmoah.com</p>
                     </div>
                     <div class="pt-3 border-t border-black/15">
                         <span class="text-[11px] text-neutral-900/80 font-medium block leading-relaxed">
-                            Terdaftar dan diawasi oleh Asosiasi Logistik & Forwarder Indonesia (ALFI) & Kemenhub RI.
+                            PT. Zimmoah Marine Trans (Est. 1989) &mdash; Terdaftar pada ALFI/ILFA, IATA, dan Kemenhub RI.
                         </span>
                     </div>
                 </div>

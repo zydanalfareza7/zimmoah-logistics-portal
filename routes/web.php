@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ServiceController;
@@ -10,17 +11,17 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes - Zimmoah Enterprise Platform
+| Web Routes - Zimmoah Enterprise Platform (Unified with Official Zimmoah.com)
 |--------------------------------------------------------------------------
 */
 
-// 1. Public Facing Pages (Maersk Inspired UI)
+// 1. Public Facing Pages (Maersk Inspired UI + Official Zimmoah Content)
 Route::get('/lang/{locale}', [HomeController::class, 'switchLocale'])->name('locale.switch');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tracking', [HomeController::class, 'tracking'])->name('tracking');
 Route::get('/schedules', [ScheduleController::class, 'index'])->name('schedules.index');
 
-// Services & Company
+// Services
 Route::prefix('services')->name('services.')->group(function () {
     Route::get('/forwarding', [ServiceController::class, 'forwarding'])->name('forwarding');
     Route::get('/warehousing', [ServiceController::class, 'warehousing'])->name('warehousing');
@@ -28,8 +29,33 @@ Route::prefix('services')->name('services.')->group(function () {
     Route::get('/consolidation', [ServiceController::class, 'consolidation'])->name('consolidation');
 });
 
+// Company & Official Zimmoah Pages
 Route::get('/profile', [ServiceController::class, 'profile'])->name('company.profile');
 Route::get('/contact', [ServiceController::class, 'contact'])->name('contact');
+
+Route::prefix('company')->name('company.')->group(function () {
+    Route::get('/ceo-message', [ServiceController::class, 'ceoMessage'])->name('ceo');
+    Route::get('/history', [ServiceController::class, 'history'])->name('history');
+    Route::get('/cip', [ServiceController::class, 'cip'])->name('cip');
+    Route::get('/license', [ServiceController::class, 'license'])->name('license');
+    Route::get('/organization', [ServiceController::class, 'organization'])->name('organization');
+    Route::get('/branches', [ServiceController::class, 'branches'])->name('branches');
+});
+
+// Legacy zimmoah.com .php URL compatibility redirects
+Route::redirect('/greetings.php', '/company/ceo-message');
+Route::redirect('/history.php', '/company/history');
+Route::redirect('/cip.php', '/company/cip');
+Route::redirect('/license.php', '/company/license');
+Route::redirect('/organization.php', '/company/organization');
+Route::redirect('/branch.php', '/company/branches');
+Route::redirect('/forwarding.php', '/services/forwarding');
+Route::redirect('/warehousing.php', '/services/warehousing');
+Route::redirect('/trucking.php', '/services/trucking');
+Route::redirect('/lcl.php', '/services/consolidation');
+Route::redirect('/schedule.php', '/schedules');
+Route::redirect('/contactus.php', '/contact');
+Route::redirect('/company-profile.php', '/profile');
 
 // 2. Career & Recruitment Portal
 Route::prefix('careers')->name('career.')->group(function () {
@@ -56,6 +82,11 @@ Route::prefix('tickets')->name('tickets.')->group(function () {
 
 // Inbound Email Webhook API
 Route::post('/api/inbound-email', [TicketController::class, 'inboundEmail'])->name('api.inbound_email');
+
+// Zimmoah Smart Assistant Chatbot (Live DB + Optional Gemini AI)
+Route::post('/chatbot/message', [ChatbotController::class, 'message'])
+    ->middleware('throttle:20,1')
+    ->name('chatbot.message');
 
 // 4. Staff & Back-Office Admin Portal
 Route::get('/login', [AdminController::class, 'showLogin'])->name('login');

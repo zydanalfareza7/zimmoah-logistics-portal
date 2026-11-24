@@ -4,8 +4,10 @@ Portal web logistik enterprise untuk **Zimmoah Global Logistics** yang dibangun 
 
 ## Fitur Utama
 
-- **Company Profile & Services**: Halaman layanan Forwarding, Warehousing, Trucking, Consolidation, profil perusahaan, dan informasi 3 kantor cabang resmi (Jakarta HQ, Soewarna Airport, Semarang).
-- **Schedules & Cargo Tracking**: Pencarian jadwal kapal/kargo (laut & udara) serta pelacakan resi/AWB/tiket.
+- **Company Profile & Official Corporate Pages**: Data & aset resmi PT. Zimmoah Marine Trans mencakup CEO Message, History (1989–2018), Corporate Identity Program (CIP & download paket logo), License & Certificates, Organization Chart, 8 Cabang & Afiliasi beserta Google Maps, direktori PIC departemen, serta dokumen resmi `profile-170213.pdf` dan `Zimmoah Schedule.pdf`.
+- **Services**: Layanan Forwarding, Warehousing, Trucking (82 unit armada & 30 rute kota Jawa–Bali), dan LCL Consolidation.
+- **Schedules & 5-Step Cargo Tracking**: Pencarian jadwal kapal/pesawat (laut & udara) serta pelacakan resi/kontainer/AWB/tiket (`ZIM-CARGO-9042`, `ZIM-AIR-8821`) dalam 3 bahasa (`ID` / `EN` / `KO`).
+- **Zimmoah Assistant (Chatbot)**: Widget chat publik yang langsung terhubung ke live database (lacak kargo, jadwal, 30 kota trucking, kontak PIC, lowongan aktif) dan siap dihubungkan secara opsional ke **Google Gemini AI** lewat `GEMINI_API_KEY` di `.env`.
 - **Email Ticketing System**:
   - Formulir pembuatan tiket bantuan publik (`/tickets/create`) dan pelacakan status tiket (`/tickets/lookup`).
   - Portal tiket pelanggan aman dengan verifikasi token email.
@@ -14,7 +16,7 @@ Portal web logistik enterprise untuk **Zimmoah Global Logistics** yang dibangun 
 - **Career & Recruitment (HR ATS)**:
   - Daftar lowongan kerja (`/careers`) dan formulir lamar cepat dengan unggah CV/Resume terproteksi di private storage (`storage/app/private/resumes`).
   - Dashboard HR ATS (`/admin/careers`) untuk mengelola tahapan seleksi (*Applied -> Screening -> Interview -> Offered -> Rejected*), rating pelamar, catatan pewawancara, serta unduh CV aman via streaming terautentikasi.
-- **Keamanan**: Security headers middleware (`X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection`, `Referrer-Policy`), validasi input ketat, proteksi CSRF, dan private file storage.
+- **Keamanan**: Security headers middleware (`X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection`, `Referrer-Policy`), validasi input ketat, proteksi CSRF, *rate limiting*, filter *prompt-injection* chatbot, dan private file storage.
 
 ---
 
@@ -33,8 +35,8 @@ Ikuti langkah-langkah berikut di terminal (PowerShell / Git Bash / CMD):
 
 ### 1. Clone Repository
 ```bash
-git clone <URL_REPOSITORY_GITHUB>
-cd <nama-folder-repo>
+git clone https://github.com/zydanalfareza7/zimmoah-logistics-portal.git
+cd zimmoah-logistics-portal
 ```
 
 ### 2. Install Dependency PHP & Frontend
@@ -55,6 +57,7 @@ cp .env.example .env
 # Generate App Key
 php artisan key:generate
 ```
+*(Opsional: tambahkan `GEMINI_API_KEY=...` dan `GEMINI_MODEL=gemini-2.5-flash` di `.env` untuk mengaktifkan jawaban AI percakapan bebas pada chatbot Zimmoah Assistant. Tanpa API key pun chatbot tetap berjalan penuh dengan live database.)*
 
 ### 4. Siapkan Database SQLite, Migrasi & Seeder
 Project ini sudah dikonfigurasi menggunakan SQLite secara default agar mudah dijalankan tanpa perlu setting XAMPP/MySQL manual.

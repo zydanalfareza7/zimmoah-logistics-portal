@@ -154,7 +154,7 @@
         <!-- Service 1: Forwarding -->
         <div class="group bg-white rounded-3xl border-2 border-neutral-200 hover:border-[#FECE00] shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col">
             <div class="h-48 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Freight Forwarding" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                <img src="{{ asset('images/services/forwarding.jpg') }}" alt="Freight Forwarding" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 <span class="absolute bottom-3 left-4 text-[#FECE00] font-black text-base">Freight Forwarding</span>
             </div>
@@ -171,13 +171,13 @@
         <!-- Service 2: Warehousing -->
         <div class="group bg-white rounded-3xl border-2 border-neutral-200 hover:border-[#FECE00] shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col">
             <div class="h-48 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80" alt="Warehousing" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                <img src="{{ asset('images/services/warehousing.jpg') }}" alt="Warehousing" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 <span class="absolute bottom-3 left-4 text-[#FECE00] font-black text-base">Warehousing</span>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <p class="text-xs text-neutral-600 leading-relaxed">
-                    Fasilitas gudang transit di dekat Bandara Soekarno-Hatta & Pelabuhan Priok lengkap dengan sistem penanganan bea cukai.
+                    Gudang berikat &amp; VMI 18.000 m&sup2; (ISO 9001, FIFO, ERP) di dekat Bandara Soekarno-Hatta, Cikarang (RLC), &amp; Tanjung Priok.
                 </p>
                 <a href="{{ route('services.warehousing') }}" class="text-xs font-black text-black group-hover:underline decoration-[#FECE00] decoration-2 underline-offset-4 flex items-center gap-1">
                     Detail Layanan &rarr;
@@ -188,13 +188,13 @@
         <!-- Service 3: Trucking -->
         <div class="group bg-white rounded-3xl border-2 border-neutral-200 hover:border-[#FECE00] shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col">
             <div class="h-48 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80" alt="Trucking" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                <img src="{{ asset('images/services/trucking.jpg') }}" alt="Trucking" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 <span class="absolute bottom-3 left-4 text-[#FECE00] font-black text-base">Inland Trucking</span>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <p class="text-xs text-neutral-600 leading-relaxed">
-                    Armada truk trailer 20ft/40ft, wingbox, dan colt diesel untuk distribusi darat lintas Jawa-Sumatera bergaransi tepat waktu.
+                    82 unit armada mandiri (trailer 20ft/40ft, truk 25T/8T/5T, forklift) melayani jadwal rutin 30 kota Jawa &amp; Bali.
                 </p>
                 <a href="{{ route('services.trucking') }}" class="text-xs font-black text-black group-hover:underline decoration-[#FECE00] decoration-2 underline-offset-4 flex items-center gap-1">
                     Detail Layanan &rarr;
@@ -205,7 +205,7 @@
         <!-- Service 4: Consolidation -->
         <div class="group bg-white rounded-3xl border-2 border-neutral-200 hover:border-[#FECE00] shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col">
             <div class="h-48 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80" alt="Consolidation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                <img src="{{ asset('images/services/consolidation.jpg') }}" alt="Consolidation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 <span class="absolute bottom-3 left-4 text-[#FECE00] font-black text-base">Consolidation</span>
             </div>
@@ -271,6 +271,61 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5B. CORPORATE HIGHLIGHTS (MERGED OFFICIAL ZIMMOAH.COM SECTIONS) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pt-20 pb-4">
+    <div class="bg-black text-white rounded-3xl p-8 sm:p-12 shadow-xl border-2 border-black overflow-hidden">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+            <div class="space-y-2 max-w-2xl">
+                <span class="inline-block text-[11px] font-black uppercase tracking-widest bg-[#FECE00] text-black px-3.5 py-1 rounded-full">
+                    PT. Zimmoah Marine Trans &bull; Est. 1989
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black tracking-tight text-white">
+                    Profil Korporat, Sejarah &amp; Jaringan Resmi
+                </h2>
+                <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                    Akses informasi lengkap perusahaan langsung dari portal resmi Zimmoah: sambutan CEO, sejarah sejak 1989, panduan identitas merek (CIP), lisensi, struktur organisasi, brosur PDF, dan peta 8 cabang Indonesia–Vietnam.
+                </p>
+            </div>
+            <a href="{{ route('company.profile') }}" class="flex-shrink-0 bg-[#FECE00] hover:bg-white text-black font-black text-xs px-6 py-3 rounded-full transition">
+                Lihat Profil &amp; Brosur PDF &rarr;
+            </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+            <a href="{{ route('company.ceo') }}" class="group bg-neutral-900 hover:bg-[#FECE00] border border-neutral-800 hover:border-[#FECE00] rounded-2xl p-4 transition space-y-1.5">
+                <span class="text-[10px] font-black uppercase text-[#FECE00] group-hover:text-black">01</span>
+                <h3 class="text-sm font-black text-white group-hover:text-black">{{ __('messages.cmp_ceo') }}</h3>
+                <p class="text-[11px] text-neutral-400 group-hover:text-neutral-900">Jason Lee (이지현)</p>
+            </a>
+            <a href="{{ route('company.history') }}" class="group bg-neutral-900 hover:bg-[#FECE00] border border-neutral-800 hover:border-[#FECE00] rounded-2xl p-4 transition space-y-1.5">
+                <span class="text-[10px] font-black uppercase text-[#FECE00] group-hover:text-black">02</span>
+                <h3 class="text-sm font-black text-white group-hover:text-black">{{ __('messages.cmp_history') }}</h3>
+                <p class="text-[11px] text-neutral-400 group-hover:text-neutral-900">1989 &ndash; Present</p>
+            </a>
+            <a href="{{ route('company.cip') }}" class="group bg-neutral-900 hover:bg-[#FECE00] border border-neutral-800 hover:border-[#FECE00] rounded-2xl p-4 transition space-y-1.5">
+                <span class="text-[10px] font-black uppercase text-[#FECE00] group-hover:text-black">03</span>
+                <h3 class="text-sm font-black text-white group-hover:text-black">{{ __('messages.cmp_cip') }}</h3>
+                <p class="text-[11px] text-neutral-400 group-hover:text-neutral-900">AI / JPG / PNG Pack</p>
+            </a>
+            <a href="{{ route('company.license') }}" class="group bg-neutral-900 hover:bg-[#FECE00] border border-neutral-800 hover:border-[#FECE00] rounded-2xl p-4 transition space-y-1.5">
+                <span class="text-[10px] font-black uppercase text-[#FECE00] group-hover:text-black">04</span>
+                <h3 class="text-sm font-black text-white group-hover:text-black">{{ __('messages.cmp_license') }}</h3>
+                <p class="text-[11px] text-neutral-400 group-hover:text-neutral-900">ALFI &amp; Air Agency</p>
+            </a>
+            <a href="{{ route('company.organization') }}" class="group bg-neutral-900 hover:bg-[#FECE00] border border-neutral-800 hover:border-[#FECE00] rounded-2xl p-4 transition space-y-1.5">
+                <span class="text-[10px] font-black uppercase text-[#FECE00] group-hover:text-black">05</span>
+                <h3 class="text-sm font-black text-white group-hover:text-black">{{ __('messages.cmp_organization') }}</h3>
+                <p class="text-[11px] text-neutral-400 group-hover:text-neutral-900">EN &amp; KR Org Chart</p>
+            </a>
+            <a href="{{ route('company.branches') }}" class="group bg-neutral-900 hover:bg-[#FECE00] border border-neutral-800 hover:border-[#FECE00] rounded-2xl p-4 transition space-y-1.5">
+                <span class="text-[10px] font-black uppercase text-[#FECE00] group-hover:text-black">06</span>
+                <h3 class="text-sm font-black text-white group-hover:text-black">{{ __('messages.cmp_branches') }}</h3>
+                <p class="text-[11px] text-neutral-400 group-hover:text-neutral-900">8 Google Maps</p>
+            </a>
         </div>
     </div>
 </section>

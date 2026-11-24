@@ -117,5 +117,35 @@
             {{ $schedules->withQueryString()->links() }}
         </div>
     </div>
+
+    <!-- Official Weekly Shipping Schedule PDF (from zimmoah.com/schedule.php) -->
+    @php $schedulePdf = config('zimmoah.documents.schedule_pdf'); @endphp
+    @if ($schedulePdf)
+    <div class="bg-white rounded-3xl border-2 border-neutral-200 shadow-sm overflow-hidden">
+        <div class="p-6 sm:p-8 bg-[#FFFBE6] border-b border-neutral-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+                <span class="inline-block text-[10px] font-black uppercase bg-black text-[#FECE00] px-3 py-1 rounded-full mb-1.5">
+                    Official Schedule Brochure &bull; PDF
+                </span>
+                <h2 class="text-xl sm:text-2xl font-black text-black">Zimmoah Official Weekly Schedule (PDF)</h2>
+                <p class="text-xs text-neutral-600 mt-1">Dokumen jadwal pelayaran resmi Zimmoah yang dapat dilihat langsung atau diunduh untuk referensi tim logistik Anda.</p>
+            </div>
+            <div class="flex items-center gap-2.5 flex-shrink-0">
+                <a href="{{ asset($schedulePdf) }}" target="_blank"
+                   class="px-4 py-2.5 rounded-full text-xs font-black bg-white border border-neutral-300 hover:border-black text-black transition">
+                    Buka Tab Baru &nearr;
+                </a>
+                <a href="{{ asset($schedulePdf) }}" download
+                   class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-black bg-black hover:bg-[#FECE00] text-[#FECE00] hover:text-black transition shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Download Schedule PDF</span>
+                </a>
+            </div>
+        </div>
+        <div class="p-4 sm:p-6 bg-neutral-100">
+            <iframe src="{{ asset($schedulePdf) }}" class="w-full h-[680px] rounded-2xl border border-neutral-200 bg-white" title="Zimmoah Official Schedule PDF"></iframe>
+        </div>
+    </div>
+    @endif
 </div>
 @endsection

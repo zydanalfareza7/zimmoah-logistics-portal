@@ -26,6 +26,24 @@ return [
     'svc_consolidation' => '혼적 서비스 (Consolidation)',
     'svc_consolidation_desc' => '정기 LCL / FCL 콘솔 스케줄',
 
+    // Company Dropdown
+    'cmp_profile' => '회사 소개서 (PDF)',
+    'cmp_profile_desc' => '기업 비전, 미션 및 공식 브로슈어',
+    'cmp_ceo' => 'CEO 인사말',
+    'cmp_ceo_desc' => '이지현 대표이사 인사말 (1989년 설립)',
+    'cmp_history' => '회사 연혁',
+    'cmp_history_desc' => '1989년부터 이어온 성장 발자취',
+    'cmp_cip' => 'CIP 및 로고 다운로드',
+    'cmp_cip_desc' => '워드마크, 시그니처 및 AI/JPG/PNG 파일',
+    'cmp_license' => '라이센스 및 협회',
+    'cmp_license_desc' => '가입 협회 및 공식 항공화물 에이전시',
+    'cmp_organization' => '조직도',
+    'cmp_organization_desc' => '자카르타 본사 부서별 조직 구성',
+    'cmp_branches' => '지점 안내 및 지도',
+    'cmp_branches_desc' => '인도네시아·베트남 8개 거점 지도',
+    'cmp_directory' => '담당부서 연락처',
+    'cmp_directory_desc' => '본사·지점·관계사 직통 이메일/전화',
+
     // Hero & Home
     'hero_badge' => '통합 글로벌 공급망 솔루션',
     'hero_title_prefix' => '안전하고 신속한',

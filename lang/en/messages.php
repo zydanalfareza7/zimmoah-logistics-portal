@@ -26,6 +26,24 @@ return [
     'svc_consolidation' => 'Consolidation',
     'svc_consolidation_desc' => 'LCL / FCL Containerized Schedule',
 
+    // Company Dropdown
+    'cmp_profile' => 'Company Profile & PDF',
+    'cmp_profile_desc' => 'Vision, Mission & Official Brochure',
+    'cmp_ceo' => 'CEO Message',
+    'cmp_ceo_desc' => 'Message from Jason Lee (Est. 1989)',
+    'cmp_history' => 'History (1989–Present)',
+    'cmp_history_desc' => 'Corporate Milestones & Expansion',
+    'cmp_cip' => 'CIP & Logo Downloads',
+    'cmp_cip_desc' => 'Wordmark, Signature, AI/JPG/PNG Pack',
+    'cmp_license' => 'License & Association',
+    'cmp_license_desc' => 'Memberships & Official Aircargo Agency',
+    'cmp_organization' => 'Organization Chart',
+    'cmp_organization_desc' => 'Head Office Corporate Structure',
+    'cmp_branches' => 'Branch Network & Maps',
+    'cmp_branches_desc' => '8 Indonesia, Vietnam & Affiliate Maps',
+    'cmp_directory' => 'Contact Directory',
+    'cmp_directory_desc' => 'Department PICs, Emails & Extensions',
+
     // Hero & Home
     'hero_badge' => 'End-to-End Supply Chain Solution',
     'hero_title_prefix' => 'Go the distance with',

@@ -26,6 +26,24 @@ return [
     'svc_consolidation' => 'Consolidation',
     'svc_consolidation_desc' => 'LCL / FCL Containerized Schedule',
 
+    // Company Dropdown
+    'cmp_profile' => 'Profil Perusahaan & PDF',
+    'cmp_profile_desc' => 'Visi, Misi & Brosur Resmi Zimmoah',
+    'cmp_ceo' => 'Sambutan CEO',
+    'cmp_ceo_desc' => 'Pesan CEO Jason Lee (Est. 1989)',
+    'cmp_history' => 'Sejarah (1989–Kini)',
+    'cmp_history_desc' => 'Tonggak Pertumbuhan & Ekspansi',
+    'cmp_cip' => 'CIP & Unduh Logo',
+    'cmp_cip_desc' => 'Wordmark, Signature, Paket AI/JPG/PNG',
+    'cmp_license' => 'Lisensi & Asosiasi',
+    'cmp_license_desc' => 'Keanggotaan & Agen Resmi Kargo Udara',
+    'cmp_organization' => 'Struktur Organisasi',
+    'cmp_organization_desc' => 'Bagan Organisasi Kantor Pusat',
+    'cmp_branches' => 'Jaringan Cabang & Peta',
+    'cmp_branches_desc' => '8 Peta Lokasi Indonesia, Vietnam & Afiliasi',
+    'cmp_directory' => 'Direktori Kontak PIC',
+    'cmp_directory_desc' => 'Kontak Departemen, Email & Ekstensi',
+
     // Hero & Home
     'hero_badge' => 'End-to-End Supply Chain Solution',
     'hero_title_prefix' => 'Go the distance with',
